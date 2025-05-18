@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>موقع كورسات تعليمي</title>
+  <style>
+    /* تنسيقات عامة */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.2nGQKpGG5kora86sQqdZLwHaE7%26cb%3Diwp2%26pid%3DApi&f=1&ipt=aa6f689bb445bc40be76680259645ca8002c72fe5bf7d2cfad5529313ab73835&ipo=images");
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  header {
+    background-color: #005f73;
+    color: white;
+    padding: 2rem 1rem;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  header p {
+    margin: 0.5rem 0 0;
+    font-size: 1.2rem;
+  }
+  
+  main {
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .courses {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .course-card {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    width: 280px;
+    text-align: center;
+  }
+  
+  .course-card img {
+    width: 100%;
+    border-radius: 20px;
+    height: 160px;
+    object-fit: cover;
+  }
+  
+  .course-card h2 {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    color: #0077b6;
+  }
+  
+  .course-card p {
+    font-size: 1rem;
+    margin: 0.5rem 0 1rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background-color: #0081a7;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 1s ease;
+  }
+  
+  .btn:hover {
+    background-color: #005f73;
+  }
+  
+  footer {
+    background-color: #061900;
+    color: #ffffff;
+    padding: 1rem;
+    margin-top: 4rem;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="1">موقع كورسات تعليمي</h1>
+    <p>تعلم مهارات جديدة بسهولة</p>
+  </header>
+
+  <main>
+    <section class="courses">
+      <article class="course-card">
+        <img src="https://horadecodar.com.br/wp-content/uploads/2023/04/Linguagem-HTML-768x512.jpg" alt="كورسات HTML" />
+        <h2>كورسات HTML للمبتدئين</h2>
+        <p>تعلم أساسيات بناء صفحات الويب باستخدام HTML.</p>
+        <a href="" class="btn">ابدأ الآن</a>
+      </article>
+
+      <article class="course-card">
+        <img src="https://i.ytimg.com/vi/6vbgZnQrpbU/maxresdefault.jpg" alt="كورسات CSS" />
+        <h2>كورسات CSS لتنسيق المواقع</h2>
+        <p>تحكم في مظهر موقعك بتنسيقات CSS الحديثة.</p>
+        <a href="" class="btn">ابدأ الآن</a>
+      </article>
+
+      <article class="course-card">
+        <img src="https://radicalhub.com/wp-content/uploads/2018/07/javascript.jpg" alt="كورسات JavaScript" />
+        <h2>كورسات JavaScript التفاعلية</h2>
+        <p>أضف تفاعلية وحيوية لموقعك باستخدام JavaScript.</p>
+        <a href="" class="btn">ابدأ الآن</a>
+      </article>
+
+      <article class="course-card">
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.gXkHAH9r8d8DlplWCbLEiAHaEK%26cb%3Diwp2%26pid%3DApi&f=1&ipt=384df967bc9256d7caacce5091ad3254321749038f7f33eaffb683eb982de545&ipo=images" alt="كورسات JavaScript" />
+        <h2>كورسات SQL التفاعلية</h2>
+        <p>يمكنك تخزين و تحليل البيانات في قواعد البيانات  باستخدام لغة SQL.</p>
+        <a href="" class="btn">ابدأ الآن</a>
+      </article>
+
+      <article class="course-card">
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.NWby1G2YSN6ovGXIJGl6_wHaDt%26pid%3DApi&f=1&ipt=c6b52efa8d0db26e7e86ec1313db3683ea4d852974d69772851d35de6d6560da&ipo=images" />
+        <h2>كورسات PHP التفاعلية</h2>
+        <p> يمكنك ادارة و مراقبة البيانات و معالجتها بأستخدام   PHP .</p>
+        <a href="" class="btn">ابدأ الآن</a>
+      </article>
+    </section>
+  </main>
+
+  <a href="#1"><span>top de page</span></a>
+  <footer>
+    <p>© 2025 موقع الكورسات التعليمي | جميع الحقوق محفوظة</p>
+  </footer>
+  
+</body>
+</html>
