@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baccalauréat - Plateforme Éducative</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">📚 BAC Education</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Accueil</a></li>
+                <li><a href="#courses" class="nav-link">Cours</a></li>
+                <li><a href="#about" class="nav-link">À propos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Plateforme d'Apprentissage Baccalauréat</h1>
+            <p>Tous les cours et vidéos éducatives pour réussir votre bac</p>
+            <button class="cta-btn" onclick="document.getElementById('courses').scrollIntoView({behavior: 'smooth'})">Commencer</button>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <h2>Filtrer par Section</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterBySection('all')">Tous</button>
+                <button class="filter-btn" onclick="filterBySection('scientifique')">📐 Scientifique</button>
+                <button class="filter-btn" onclick="filterBySection('litteraire')">📖 Littéraire</button>
+                <button class="filter-btn" onclick="filterBySection('technique')">⚙️ Technique</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses-section">
+        <div class="container">
+            <h2>Nos Matières</h2>
+            <div class="courses-grid" id="coursesGrid"></div>
+        </div>
+    </section>
+
+    <!-- Course Details Modal -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCourseModal()">&times;</span>
+            <div class="modal-body">
+                <h2 id="modalTitle"></h2>
+                <div id="chaptersContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content modal-video">
+            <span class="close" onclick="closeVideoModal()">&times;</span>
+            <div class="video-container">
+                <iframe id="videoFrame" width="100%" height="600" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div id="videoDescription"></div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>À Propos</h2>
+            <p>Cette plateforme est conçue pour vous aider à réussir votre examen du baccalauréat en regroupant tous les cours importants et les vidéos éducatives en un seul endroit.</p>
+            <div class="about-features">
+                <div class="feature">
+                    <h3>📚 Cours Complets</h3>
+                    <p>Tous les chapitres organisés par matière et section</p>
+                </div>
+                <div class="feature">
+                    <h3>🎬 Vidéos YouTube</h3>
+                    <p>Explications visuelles pour mieux comprendre</p>
+                </div>
+                <div class="feature">
+                    <h3>📱 Responsive</h3>
+                    <p>Accédez depuis n'importe quel appareil</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 BAC Education Platform | Tous droits réservés</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
