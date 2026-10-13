@@ -1,104 +1,1207 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baccalauréat - Plateforme Éducative</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bac Tunisie — cours, vidéos et PDF par section</title>
+<meta name="description" content="Révisez le baccalauréat tunisien : cours en vidéo, PDF et séries d'exercices pour toutes les sections.">
+<script>try{var _s=localStorage.getItem("bac-skin"),_m=localStorage.getItem("bac-mode");if(_s&&_s!=="default")document.documentElement.dataset.theme=_s;else if(_m)document.documentElement.dataset.mode=_m}catch(e){}</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F8FB; --surface:#FFFFFF; --ink:#12203A; --muted:#58657D;
+  --line:#D8E0EC; --blue:#1E4DA1; --blue-soft:#DCE7F7; --red:#D7192D;
+  --ok:#2E7D5B;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme]):not([data-mode="light"]){--bg:#0E1626;--surface:#16213A;--ink:#EAF0FB;--muted:#9AA9C4;--line:#26345A;--blue:#7FA6EE;--blue-soft:#1E2E52;--ok:#5CC796;--red:#E5384B;}
+}
+:root:not([data-theme])[data-mode="dark"]{--bg:#0E1626;--surface:#16213A;--ink:#EAF0FB;--muted:#9AA9C4;--line:#26345A;--blue:#7FA6EE;--blue-soft:#1E2E52;--ok:#5CC796;--red:#E5384B;}
+:root[data-theme="hacker"]{--bg:#050B06;--surface:#0B160D;--ink:#7DFF8F;--muted:#4F8F58;--line:#14401C;--blue:#00E83C;--blue-soft:#0E2A14;--ok:#19C37D;--red:#FF4D6D;}
+:root[data-theme="midnight"]{--bg:#0B1020;--surface:#131A33;--ink:#E6EAFF;--muted:#8D97C4;--line:#263059;--blue:#6D8CFF;--blue-soft:#1B2650;--ok:#2FD27E;--red:#FF6B81;}
+:root[data-theme="aurora"]{--bg:#0C1418;--surface:#132228;--ink:#E8FBFF;--muted:#86AAB3;--line:#21424B;--blue:#2DD4BF;--blue-soft:#12363A;--ok:#34D399;--red:#FB7185;}
+:root[data-theme="ocean"]{--bg:#071A24;--surface:#0D2B3A;--ink:#E0F6FF;--muted:#7FB2C6;--line:#1B4A5F;--blue:#22B8CF;--blue-soft:#0F3A4D;--ok:#51CF66;--red:#FF6B6B;}
+:root[data-theme="sunset"]{--bg:#FFF7F0;--surface:#FFFFFF;--ink:#3A1D12;--muted:#8A5A44;--line:#F0D5C4;--blue:#C2410C;--blue-soft:#FFE3D1;--ok:#2F9E44;--red:#C92A2A;}
+:root[data-theme="rose"]{--bg:#FFF5F8;--surface:#FFFFFF;--ink:#3B1226;--muted:#8E5B73;--line:#F3CFDC;--blue:#C2255C;--blue-soft:#FFDEEB;--ok:#2F9E44;--red:#C92A2A;}
+:root[data-theme="tunisie"]{--bg:#FFFFFF;--surface:#FFF6F6;--ink:#1A0B0B;--muted:#6E4B4B;--line:#F1D4D6;--blue:#C8101E;--blue-soft:#FFE3E5;--ok:#2B8A3E;--red:#E70013;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 var(--body);min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:6px}
+button{font:inherit;color:inherit;cursor:pointer}
+.wrap{width:min(1180px,100% - 2rem);margin-inline:auto}
+
+/* En-tête */
+header.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:1rem;height:64px}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font:800 1.25rem/1 var(--head);letter-spacing:-.01em}
+.brand svg{width:26px;height:32px}
+.search{margin-inline-start:auto;position:relative;flex:0 1 320px}
+.search input{width:100%;height:42px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:0 1rem;font:inherit}
+.theme{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;font-size:1.1rem}
+
+/* Accueil */
+.hero{padding:clamp(2.5rem,7vw,5rem) 0 2rem}
+.hero h1{font:800 clamp(2.2rem,6vw,4.2rem)/1.02 var(--head);letter-spacing:-.03em;margin:0 0 1rem;max-width:14ch}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:52ch;margin:0}
+.arches{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.25rem;padding:1.5rem 0 4rem;list-style:none;margin:0}
+.arch{display:flex;flex-direction:column;justify-content:flex-end;min-height:290px;padding:1.4rem 1.2rem 1.3rem;text-decoration:none;
+  border-radius:105px 105px 14px 14px;border:2px solid var(--c);
+  background:color-mix(in srgb,var(--c) 11%,var(--surface));transition:transform .15s,background .15s}
+.arch:hover{transform:translateY(-4px);background:color-mix(in srgb,var(--c) 20%,var(--surface))}
+.arch .ar{font:600 1.5rem/1.2 var(--body);color:var(--c);margin-bottom:.4rem}
+.arch h2{font:700 1.3rem/1.15 var(--head);margin:0 0 .35rem}
+.arch small{color:var(--muted)}
+
+/* Pages internes */
+.crumbs{padding:1.5rem 0 .5rem;color:var(--muted);font-size:.95rem}
+.crumbs a{color:var(--muted)}
+.crumbs a:hover{color:var(--ink)}
+.page-title{font:800 clamp(1.8rem,4vw,2.8rem)/1.1 var(--head);letter-spacing:-.02em;margin:.2rem 0 .3rem}
+.page-title .ar{display:block;font:500 1.2rem var(--body);color:var(--c);margin-top:.3rem}
+.subjects{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.9rem;list-style:none;padding:1.5rem 0 4rem;margin:0}
+.subject{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-inline-start:6px solid var(--c);border-radius:10px;padding:1rem 1.1rem}
+.subject:hover{border-color:var(--c)}
+.subject h3{font:700 1.1rem/1.25 var(--head);margin:0 0 .25rem}
+.subject span{color:var(--muted);font-size:.92rem}
+.bar{height:5px;background:var(--line);border-radius:3px;margin-top:.7rem;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok)}
+
+/* Page matière : liste + lecteur */
+.study{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:1.5rem;padding:1rem 0 4rem;align-items:start}
+.study.theater{grid-template-columns:minmax(0,1fr)}
+.study.theater .lessons{position:static;max-height:none;padding:.8rem 1rem}
+.study.theater .lgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:.1rem 1rem}
+.study.theater .frame.pdf{aspect-ratio:auto;height:88vh;max-height:none}
+.viewer{max-width:1180px;width:100%;margin-inline:auto}
+.frame:fullscreen{aspect-ratio:auto;max-height:none;border-radius:0;height:100%}
+.ptools{display:flex;gap:.5rem;flex-wrap:wrap;margin:.8rem 0}
+.notice{margin:0 0 1rem;padding:.8rem 1rem;border:1px solid var(--red);border-radius:10px;background:color-mix(in srgb,var(--red) 10%,var(--surface));font-size:.92rem}
+.vplaylist{margin:1.2rem 0;padding:1rem 1.2rem;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.vplaylist h3{font:700 1.05rem var(--head);margin:0 0 .7rem}
+.vplaylist ol{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}
+.vplaylist li{display:flex;gap:.35rem}
+.vplaylist li>button:first-child{flex:1;text-align:start;padding:.55rem .8rem;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.vplaylist li.on>button:first-child{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.vplaylist .x{width:38px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.addbox{margin:1rem 0;padding:.7rem 1rem;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-align:start}
+.addbox summary{cursor:pointer;font-weight:600}
+.linkin{display:block;width:100%;margin-top:.5rem;padding:.7rem;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+.empty-form{max-width:640px;margin:1rem auto 0}
+@media (max-width:1000px){.study{grid-template-columns:minmax(0,1fr)}.lessons{position:static;max-height:none}}
+.lessons{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:.5rem;position:sticky;top:78px;max-height:calc(100vh - 100px);overflow:auto}
+.lessons h2{font:700 .95rem var(--head);margin:.6rem .6rem .4rem;color:var(--muted)}
+.lesson{display:flex;align-items:center;gap:.5rem;border-radius:8px}
+.lesson a{flex:1;display:block;padding:.6rem .6rem;text-decoration:none;border-radius:8px;line-height:1.3}
+.lesson a:hover{background:var(--blue-soft)}
+.lesson.on a{background:var(--c);color:#fff;font-weight:600}
+.tick{flex:none;width:28px;height:28px;border-radius:50%;border:2px solid var(--line);background:none;display:grid;place-items:center;font-size:.8rem;line-height:1}
+.tick[aria-pressed="true"]{background:var(--ok);border-color:var(--ok);color:#fff}
+.viewer{min-width:0}
+.viewer h2{font:800 clamp(1.4rem,3vw,2rem)/1.15 var(--head);margin:0 0 1rem;letter-spacing:-.01em}
+.tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.tabs button{border:1px solid var(--line);background:var(--surface);padding:.5rem 1rem;border-radius:999px;font-weight:600}
+.tabs button[aria-selected="true"]{background:var(--c);border-color:var(--c);color:#fff}
+.frame{position:relative;width:100%;background:#000;border-radius:12px;overflow:hidden}
+.frame.video{aspect-ratio:16/9}
+.frame.pdf{aspect-ratio:3/4;max-height:85vh;background:var(--surface);border:1px solid var(--line);min-height:480px}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.actions{display:flex;gap:.6rem;margin-top:.8rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.55rem 1rem;border-radius:8px;border:1px solid var(--line);background:var(--surface);text-decoration:none;font-weight:600;font-size:.95rem}
+.btn:hover{border-color:var(--c)}
+.empty{border:2px dashed var(--line);border-radius:12px;padding:2.5rem 1.5rem;text-align:center;color:var(--muted)}
+.empty strong{display:block;color:var(--ink);font:700 1.15rem var(--head);margin-bottom:.4rem}
+.results{list-style:none;padding:1rem 0 4rem;margin:0;display:grid;gap:.6rem}
+.results a{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.8rem 1rem}
+.results a:hover{border-color:var(--blue)}
+.results small{color:var(--muted)}
+
+/* Accueil enrichi */
+.resume{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-inline-start:6px solid var(--c);border-radius:10px;padding:.9rem 1.1rem;margin:.5rem 0 0}
+.resume p{margin:0;flex:1;min-width:200px}
+.resume small{color:var(--muted);display:block}
+.stats{color:var(--muted);margin-top:1.2rem}
+.block{padding:2.5rem 0;border-top:1px solid var(--line)}
+.block h2{font:800 clamp(1.4rem,3vw,2rem)/1.15 var(--head);letter-spacing:-.02em;margin:0 0 1.2rem}
+.method{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;list-style:none;margin:0;padding:0;counter-reset:m}
+.method li{counter-increment:m;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem}
+.method li::before{content:counter(m);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--blue);color:var(--bg);font:700 .95rem var(--head);margin-bottom:.6rem}
+.method strong{display:block;font:700 1.05rem var(--head);margin-bottom:.2rem}
+.method span{color:var(--muted);font-size:.95rem}
+.tips{columns:2 320px;column-gap:2.5rem;margin:0;padding-inline-start:1.2rem}
+.tips li{break-inside:avoid;margin-bottom:.8rem}
+.lead{color:var(--muted);max-width:65ch;margin:0 0 .5rem}
+.pn{display:flex;justify-content:space-between;gap:.6rem;margin-top:1.2rem}
+.annales{margin-top:2.2rem;padding-top:1.5rem;border-top:1px solid var(--line)}
+.annales h3{font:800 1.3rem var(--head);margin:0 0 .8rem}
+.annales ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.annales li{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.55rem .9rem}
+.annales li>span:first-child{flex:1;min-width:140px;font-weight:600}
+.soon{color:var(--muted);font-size:.9rem;padding:.3rem .6rem}
+
+/* Design : décor, icônes, aide à la recherche */
+body{background-image:radial-gradient(color-mix(in srgb,var(--ink) 8%,transparent) 1px,transparent 1.3px);background-size:24px 24px}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:end}
+.hero-art{display:block;width:100%;max-width:440px;justify-self:end;margin-bottom:.5rem}
+.arch .ico{font-size:2.8rem;line-height:1;margin-bottom:auto;align-self:center;padding-top:1.3rem}
+.arch:hover{box-shadow:0 14px 30px -14px var(--c)}
+.subject h3{display:flex;align-items:center;gap:.55rem}
+.subject .i{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:color-mix(in srgb,var(--c) 14%,var(--surface));font-size:1.1rem}
+.lessons .bar{margin:.2rem .6rem .6rem}
+.addvid{display:flex;gap:.5rem;margin-top:1.2rem;flex-wrap:wrap;justify-content:center}
+.addvid input{flex:1 1 260px;min-width:0;height:42px;border:1px solid var(--line);border-radius:8px;padding:0 .8rem;background:var(--bg);color:var(--ink);font:inherit}
+.hint{font-size:.85rem;margin-top:.8rem;color:var(--muted)}
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.res a{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem}
+.res a:hover{border-color:var(--blue)}
+.res strong{display:block;font:700 1.05rem var(--head);margin-bottom:.2rem}
+.res span{color:var(--muted);font-size:.95rem}
+@media (max-width:860px){.hero{grid-template-columns:1fr}.hero-art{max-width:300px;justify-self:start}}
+
+/* Outils */
+.navlink{font-weight:600;text-decoration:none;padding:.45rem .8rem;border-radius:8px}
+.navlink:hover{background:var(--blue-soft)}
+.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;list-style:none;padding:1.2rem 0 3rem;margin:0}
+.tool{display:flex;flex-direction:column;gap:.35rem;height:100%;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.1rem}
+.tool:hover{border-color:var(--blue)}
+.tool .i{font-size:1.8rem;line-height:1}
+.tool strong{font:700 1.1rem var(--head)}
+.tool span:last-child{color:var(--muted);font-size:.95rem}
+.tool-body{padding-bottom:4rem}
+.form{display:flex;gap:1rem;flex-wrap:wrap;margin:1rem 0}
+.form label{display:flex;flex-direction:column;gap:.3rem;font-weight:600;font-size:.92rem;min-width:150px}
+.form select,.form input,.row input{height:42px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);padding:0 .7rem;font:inherit}
+button.btn{font:inherit;font-weight:600;cursor:pointer}
+.btn.primary{background:var(--blue);color:var(--bg);border-color:var(--blue)}
+.notes{max-width:640px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:.5rem .8rem}
+.notes-h,.row{display:grid;grid-template-columns:1fr 100px 80px;gap:.6rem;align-items:center;padding:.35rem 0}
+.notes-h{color:var(--muted);font-size:.85rem;font-weight:600}
+.result{margin-top:1rem;padding:1rem 1.2rem;border-radius:12px;background:var(--blue-soft);max-width:640px}
+.result p{margin:.25rem 0}
+.timer{font:800 clamp(3rem,12vw,6rem)/1 var(--head);font-variant-numeric:tabular-nums;margin:1.5rem 0;letter-spacing:-.02em}
+.timer.warn{color:#C25E1B}
+.timer.danger{color:var(--red)}
+.phase{color:var(--muted);margin:-.8rem 0 1rem}
+.stats-box{margin-top:2rem;max-width:640px}
+.stats-box h3{font:700 1.2rem var(--head);margin:0 0 .5rem}
+.stat{display:grid;grid-template-columns:150px 1fr 70px;gap:.6rem;align-items:center;margin:.45rem 0}
+.stat .bar{margin:0}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:.9rem 1.2rem;margin:.8rem 0;max-width:720px}
+.day h3{font:700 1.05rem var(--head);margin:0 0 .4rem;text-transform:capitalize}
+.day ol{margin:0;padding-inline-start:1.2rem}
+.day li{margin:.25rem 0}
+.breath-wrap{display:grid;place-items:center;gap:1.2rem;padding:2rem 0}
+.breath{width:200px;height:200px;border-radius:50%;background:radial-gradient(circle at 35% 30%,color-mix(in srgb,var(--blue) 55%,#fff),var(--blue));transform:scale(.7);transition:transform 4s ease-in-out}
+.breath-t{font:700 1.5rem var(--head);min-height:2rem;text-align:center;margin:0}
+.cd{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.cd>div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.2rem}
+.cd small{color:var(--muted)}
+.cd b{display:block;font:800 clamp(1.4rem,3.5vw,2rem)/1.2 var(--head);font-variant-numeric:tabular-nums;margin:.3rem 0}
+.cd span{color:var(--muted);text-transform:capitalize}
+details.faq{border-bottom:1px solid var(--line);padding:.8rem 0}
+details.faq summary{cursor:pointer;font-weight:600}
+details.faq p{margin:.6rem 0 0;color:var(--muted);max-width:70ch}
+@media (max-width:860px){.navlink{padding:.4rem .5rem}.stat{grid-template-columns:100px 1fr 60px}}
+@media (prefers-reduced-motion:reduce){.breath{transition:none!important}}
+
+/* Chaînes partenaires */
+.chain{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.3rem;margin:1.2rem 0;max-width:900px}
+.chain h2{font:800 1.4rem var(--head);margin:0 0 .3rem}
+.chain p{margin:0 0 1rem;color:var(--muted)}
+.partners{margin-top:1.6rem;padding:1rem 1.2rem;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.partners h3{font:700 1.05rem var(--head);margin:0 0 .6rem}
+.partners .hint{margin:.6rem 0 0}
+
+/* Entraînement : QCM, fiches, SQL, devoirs */
+.qn{color:var(--muted);font-weight:600;margin:1rem 0 .4rem}
+.quiz{max-width:720px}
+.quiz h2{font:700 clamp(1.2rem,2.6vw,1.6rem)/1.3 var(--head);margin:.2rem 0 1rem}
+.opts{display:grid;gap:.6rem}
+.opt{text-align:start;padding:.8rem 1rem;border:2px solid var(--line);border-radius:10px;background:var(--surface);font:inherit;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--blue)}
+.opt:disabled{cursor:default}
+.opt.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 14%,var(--surface))}
+.opt.ko{border-color:var(--red);background:color-mix(in srgb,var(--red) 12%,var(--surface))}
+.fb{margin:1rem 0 .6rem;padding:.8rem 1rem;border-radius:10px;border:1px solid var(--line);background:var(--surface)}
+.fb.ok{border-color:var(--ok)}
+.fb.ko{border-color:var(--red)}
+.flash{display:flex;flex-direction:column;justify-content:center;gap:.8rem;width:min(640px,100%);min-height:240px;padding:1.5rem;border:2px solid var(--blue);border-radius:16px;background:var(--surface);font:inherit;text-align:center;cursor:pointer;margin-bottom:1rem}
+.flash.back{background:var(--blue-soft)}
+.flash .side{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.flash .txt{font:700 clamp(1.1rem,2.6vw,1.5rem)/1.4 var(--head)}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.4rem 0 1rem}
+.chip{width:38px;height:38px;border-radius:50%;border:2px solid var(--line);background:var(--surface);font:700 .95rem var(--head);cursor:pointer}
+.chip.on{border-color:var(--blue);color:var(--blue)}
+.chip.done{background:var(--ok);border-color:var(--ok);color:#fff}
+.mission{font:700 clamp(1.15rem,2.5vw,1.45rem)/1.35 var(--head);margin:.2rem 0 1rem;max-width:62ch}
+.schema{margin-bottom:1rem}
+.schema summary{cursor:pointer;font-weight:600}
+.sqlbox{display:block;width:100%;max-width:720px;margin-bottom:.8rem;padding:.8rem;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:500 1rem/1.5 ui-monospace,Menlo,Consolas,monospace}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;background:var(--blue-soft);padding:.1rem .35rem;border-radius:5px}
+.tbl{overflow-x:auto;margin-top:.8rem;max-width:720px}
+.tbl table{border-collapse:collapse;width:100%;background:var(--surface)}
+.tbl th,.tbl td{border:1px solid var(--line);padding:.4rem .7rem;text-align:start;white-space:nowrap}
+.tbl th{background:var(--blue-soft)}
+.tasks{list-style:none;margin:1.5rem 0 0;padding:0;display:grid;gap:.5rem;max-width:720px}
+.tasks li{display:flex;align-items:center;gap:.8rem;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.6rem .8rem}
+.tasks li>span{flex:1;min-width:0}
+.tasks small{display:block;color:var(--muted)}
+.tasks .fin strong{text-decoration:line-through;color:var(--muted)}
+.tasks .late{border-color:var(--red)}
+.prog{margin:.7rem 0;max-width:720px}
+.prog h3{font:700 1.05rem var(--head);margin:0 0 .3rem}
+.prog small{color:var(--muted);font-weight:400}
+.prog .bar i{background:var(--c)}
+.sub{font:800 1.3rem var(--head);margin:2rem 0 .8rem}
+.subj-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin:.6rem 0 0}
+
+/* Sélecteur de thème */
+.themebox{position:relative;display:flex;align-items:center;gap:.5rem}
+.themebtn{display:flex;align-items:center;gap:.5rem;height:42px;padding:0 .85rem;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:1.05rem}
+.themebtn .dot{width:20px;height:20px;border-radius:50%;background:var(--blue)}
+.theme{font-size:1.15rem;background:var(--blue-soft)!important}
+.themepanel{position:absolute;inset-inline-end:0;top:54px;width:min(350px,92vw);max-height:min(72vh,540px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:0 22px 50px -12px rgba(0,0,0,.5);padding:.6rem .6rem .8rem;z-index:30}
+.themepanel h2{font:600 1rem var(--head);color:var(--muted);margin:.7rem .7rem .9rem;padding-bottom:.7rem;border-bottom:1px solid var(--line)}
+.topt{display:flex;align-items:center;gap:1rem;width:100%;text-align:start;padding:.7rem;border:1px solid transparent;border-radius:14px;background:none;margin-bottom:.2rem}
+.topt:hover{background:var(--blue-soft)}
+.topt[aria-checked="true"]{border-color:var(--blue);background:var(--blue-soft)}
+.sw{flex:none;width:56px;height:56px;border-radius:14px;border:1px solid var(--line)}
+.tn{display:block;font:700 1.1rem var(--head);color:var(--blue)}
+.tm{display:flex;align-items:center;gap:.5rem;color:var(--muted);font-size:.88rem;margin-top:.2rem;flex-wrap:wrap}
+.tm i{display:inline-block;width:12px;height:12px;border-radius:50%}
+.topt .ck{display:none;margin-inline-start:auto;color:var(--blue);font-weight:700;font-size:1.2rem}
+.topt[aria-checked="true"] .ck{display:inline}
+@media (max-width:640px){
+  .top .wrap{flex-wrap:wrap;height:auto;padding-block:.5rem;gap:.5rem}
+  .search{order:5;flex:1 1 100%;margin:0}
+  .themebox{margin-inline-start:auto}
+}
+
+footer{margin-top:auto;border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font-size:.9rem}
+
+@media (max-width:860px){
+  .study{grid-template-columns:1fr}
+  .lessons{position:static;max-height:none;order:2}
+  .search{flex-basis:160px}
+  .brand span{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">📚 BAC Education</div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Accueil</a></li>
-                <li><a href="#courses" class="nav-link">Cours</a></li>
-                <li><a href="#about" class="nav-link">À propos</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Plateforme d'Apprentissage Baccalauréat</h1>
-            <p>Tous les cours et vidéos éducatives pour réussir votre bac</p>
-            <button class="cta-btn" onclick="document.getElementById('courses').scrollIntoView({behavior: 'smooth'})">Commencer</button>
-        </div>
-    </section>
-
-    <!-- Filter Section -->
-    <section class="filter-section">
-        <div class="container">
-            <h2>Filtrer par Section</h2>
-            <div class="filter-buttons">
-                <button class="filter-btn active" onclick="filterBySection('all')">Tous</button>
-                <button class="filter-btn" onclick="filterBySection('scientifique')">📐 Scientifique</button>
-                <button class="filter-btn" onclick="filterBySection('litteraire')">📖 Littéraire</button>
-                <button class="filter-btn" onclick="filterBySection('technique')">⚙️ Technique</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Courses Section -->
-    <section id="courses" class="courses-section">
-        <div class="container">
-            <h2>Nos Matières</h2>
-            <div class="courses-grid" id="coursesGrid"></div>
-        </div>
-    </section>
-
-    <!-- Course Details Modal -->
-    <div id="courseModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeCourseModal()">&times;</span>
-            <div class="modal-body">
-                <h2 id="modalTitle"></h2>
-                <div id="chaptersContainer"></div>
-            </div>
-        </div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#/" aria-label="Accueil">
+      <svg viewBox="0 0 26 32" aria-hidden="true"><path d="M2 31V13C2 6 7 1 13 1s11 5 11 12v18z" fill="none" stroke="var(--blue)" stroke-width="2.5"/><circle cx="13" cy="14" r="3.5" fill="var(--red)"/></svg>
+      <span id="brandName">Bac Tunisie</span>
+    </a>
+    <a class="navlink" href="#/chaines">Chaînes</a>
+    <a class="navlink" href="#/outils">Outils</a>
+    <div class="search"><input id="q" type="search" placeholder="Chercher une leçon ou une matière" aria-label="Rechercher"></div>
+    <div class="themebox">
+      <button class="themebtn" id="themeBtn" aria-haspopup="true" aria-expanded="false" aria-label="Choisir un thème"><span class="dot" id="themeDot"></span><span id="themeEmoji">🎨</span></button>
+      <button class="theme" id="theme" aria-label="Passer en mode sombre">☾</button>
+      <div class="themepanel" id="themePanel" hidden></div>
     </div>
+  </div>
+</header>
 
-    <!-- Video Modal -->
-    <div id="videoModal" class="modal">
-        <div class="modal-content modal-video">
-            <span class="close" onclick="closeVideoModal()">&times;</span>
-            <div class="video-container">
-                <iframe id="videoFrame" width="100%" height="600" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div id="videoDescription"></div>
-        </div>
-    </div>
+<main id="app" class="wrap"></main>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2>À Propos</h2>
-            <p>Cette plateforme est conçue pour vous aider à réussir votre examen du baccalauréat en regroupant tous les cours importants et les vidéos éducatives en un seul endroit.</p>
-            <div class="about-features">
-                <div class="feature">
-                    <h3>📚 Cours Complets</h3>
-                    <p>Tous les chapitres organisés par matière et section</p>
-                </div>
-                <div class="feature">
-                    <h3>🎬 Vidéos YouTube</h3>
-                    <p>Explications visuelles pour mieux comprendre</p>
-                </div>
-                <div class="feature">
-                    <h3>📱 Responsive</h3>
-                    <p>Accédez depuis n'importe quel appareil</p>
-                </div>
-            </div>
-        </div>
+<footer><div class="wrap">© <span id="year"></span> — Révisions du baccalauréat tunisien. Bon courage ! Archives de sujets : <a href="https://www.reviserbac.tn/" target="_blank" rel="noopener">reviserbac.tn</a>.</div></footer>
+
+<script src="data.js"></script>
+<script src="banque.js"></script>
+<script>
+/* ---------- Outils ---------- */
+const app = document.getElementById('app');
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let done = {};
+try { done = JSON.parse(localStorage.getItem('bac-done') || '{}'); } catch (e) {}
+const saveDone = () => { try { localStorage.setItem('bac-done', JSON.stringify(done)); } catch (e) {} };
+const lid = (s, m, i) => `${s.id}/${m.id}/${i}`;
+const hasContent = l => !!(l.video || l.pdf || l.serie);
+const count = m => m.lecons.length;
+const doneCount = (s, m) => m.lecons.reduce((n, _, i) => n + (done[lid(s, m, i)] ? 1 : 0), 0);
+
+const ICONS = { maths:'➗', physique:'⚛️', svt:'🧬', philo:'💭', arabe:'ع', francais:'📚', anglais:'🔤', info:'💻', techno:'⚙️', economie:'📈', gestion:'🧾', histgeo:'🌍', eps:'🏃', algo:'🧩', sti:'🌐' };
+const SEC_ICONS = { maths:'📐', sciences:'🔬', technique:'⚙️', eco:'📊', info:'💻', lettres:'📖', sport:'🏅' };
+let vids = {};
+try { vids = JSON.parse(localStorage.getItem('bac-vid') || '{}'); } catch (e) {}
+const saveVids = () => { try { localStorage.setItem('bac-vid', JSON.stringify(vids)); } catch (e) {} };
+const ytSearch = (s, m, l) => 'https://www.youtube.com/results?search_query=' + encodeURIComponent(`bac tunisie ${s.nom} ${m.nom} ${l.titre}`);
+const pdfSearch = (s, m, l) => 'https://www.google.com/search?q=' + encodeURIComponent(`bac tunisie ${s.nom} ${m.nom} ${l.titre} cours pdf`);
+function heroArt() {
+  const hs = [130, 175, 215, 250, 215, 175, 130], w = 54, step = 62;
+  const total = SECTIONS.length * step;
+  const arches = SECTIONS.map((x, i) => {
+    const h = hs[i % hs.length], px = i * step, y = 260 - h;
+    return `<path d="M${px} 260V${y + w / 2}a${w / 2} ${w / 2} 0 0 1 ${w} 0V260z" fill="${x.couleur}"/><circle cx="${px + w / 2}" cy="${y + w / 2 + 6}" r="7" fill="var(--bg)"/>`;
+  }).join('');
+  return `<svg class="hero-art" viewBox="0 0 ${total} 264" aria-hidden="true">${arches}<rect y="260" width="${total}" height="3" fill="var(--ink)"/></svg>`;
+}
+
+/* Convertit un lien en lien « iframe » */
+function embedVideo(u) {
+  try {
+    const url = new URL(u, location.href);
+    const h = url.hostname.replace(/^www\./, '').replace(/^m\./, '');
+    const yt = (id, list) => `https://www.youtube-nocookie.com/embed/${id}${list ? '?list=' + list : ''}`;
+    const list = url.searchParams.get('list');
+    if (h === 'youtu.be') return yt(url.pathname.slice(1), list);
+    if (h.endsWith('youtube.com') || h.endsWith('youtube-nocookie.com')) {
+      if (url.pathname === '/watch' && url.searchParams.get('v')) return yt(url.searchParams.get('v'), list);
+      if (url.pathname === '/playlist' && list) return `https://www.youtube-nocookie.com/embed/videoseries?list=${list}`;
+      const m = url.pathname.match(/^\/(?:shorts|live|embed)\/([\w-]+)/);
+      if (m && m[1] !== 'videoseries') return yt(m[1], list);
+    }
+    if (h === 'vimeo.com' && /^\/\d+/.test(url.pathname)) return `https://player.vimeo.com/video${url.pathname}`;
+    if (h === 'drive.google.com') return driveId(url) ? `https://drive.google.com/file/d/${driveId(url)}/preview` : u;
+  } catch (e) {}
+  return u;
+}
+function driveId(url) {
+  const m = url.pathname.match(/\/file\/d\/([^/]+)/);
+  return m ? m[1] : url.searchParams.get('id');
+}
+function embedPdf(u) {
+  try {
+    const url = new URL(u, location.href);
+    if (url.hostname === 'drive.google.com' && driveId(url)) return `https://drive.google.com/file/d/${driveId(url)}/preview`;
+  } catch (e) {}
+  return u;
+}
+function downloadLink(u) {
+  try {
+    const url = new URL(u, location.href);
+    if (url.hostname === 'drive.google.com' && driveId(url)) return `https://drive.google.com/uc?export=download&id=${driveId(url)}`;
+  } catch (e) {}
+  return u;
+}
+
+/* ---------- Vues ---------- */
+function home() {
+  document.title = `${SITE.nom} — cours, vidéos et PDF par section`;
+  const nM = SECTIONS.reduce((n, x) => n + x.matieres.length, 0);
+  const nL = SECTIONS.reduce((n, x) => n + x.matieres.reduce((k, m) => k + m.lecons.length, 0), 0);
+  let last = null;
+  try { last = JSON.parse(localStorage.getItem('bac-last') || 'null'); } catch (e) {}
+  let resume = '';
+  if (last) {
+    const sec = SECTIONS.find(x => x.id === last.s), mat = sec && sec.matieres.find(x => x.id === last.m), le = mat && mat.lecons[last.i];
+    if (le) resume = `<div class="resume" style="--c:${sec.couleur}"><p><small>Reprendre où vous en étiez</small><strong>${esc(le.titre)}</strong> <small>${esc(sec.nom)} · ${esc(mat.nom)}</small></p><a class="btn" href="#/s/${sec.id}/${mat.id}/${last.i}">Continuer</a></div>`;
+  }
+  app.innerHTML = `
+    <section class="hero">
+      <div class="hero-text">
+      <h1>Le bac tunisien, section par section.</h1>
+      <p>${esc(SITE.slogan)}</p>
+      <p class="stats">${SECTIONS.length} sections · ${nM} matières · ${nL} leçons au programme</p>
+      ${resume}
+      </div>
+      ${heroArt()}
     </section>
+    <ul class="arches">
+      ${SECTIONS.map(s => `
+        <li><a class="arch" style="--c:${s.couleur}" href="#/s/${s.id}">
+          <span class="ico" aria-hidden="true">${SEC_ICONS[s.id] || ""}</span>
+          <span class="ar" lang="ar" dir="rtl">${esc(s.ar)}</span>
+          <h2>${esc(s.nom)}</h2>
+          <small>${s.matieres.length} matières</small>
+        </a></li>`).join('')}
+    </ul>
+    ${countdownBlock()}
+    <section class="block">
+      <h2>Outils pour réviser</h2>
+      ${toolsGrid()}
+    </section>
+    <section class="block">
+      <h2>Comment réviser une leçon</h2>
+      <ol class="method">
+        <li><strong>Regardez la vidéo</strong><span>Pour comprendre l'idée générale avant de lire le détail.</span></li>
+        <li><strong>Lisez le cours PDF</strong><span>Soulignez les définitions et les formules à retenir.</span></li>
+        <li><strong>Faites la série d'exercices</strong><span>Cherchez seul avant d'ouvrir la correction.</span></li>
+        <li><strong>Passez aux sujets du bac</strong><span>Chronométrez-vous, comme le jour de l'examen.</span></li>
+      </ol>
+    </section>
+    <section class="block">
+      <h2>Conseils pour préparer le bac</h2>
+      <ul class="tips">
+        <li><strong>Commencez par les matières à fort coefficient</strong> de votre section, sans négliger les autres.</li>
+        <li><strong>Révisez un peu chaque jour</strong> plutôt que tout la veille : 1 h 30 régulière vaut mieux que 6 h d'un coup.</li>
+        <li><strong>Refaites les erreurs.</strong> Gardez un cahier des exercices ratés et reprenez-les une semaine plus tard.</li>
+        <li><strong>Entraînez-vous sur des sujets complets</strong> dans le temps imparti, puis comparez avec le corrigé.</li>
+        <li><strong>Dormez et mangez correctement</strong> la semaine avant les épreuves. La mémoire en dépend.</li>
+        <li><strong>Lisez bien l'énoncé</strong> deux fois avant de répondre, et soignez la rédaction.</li>
+      </ul>
+    </section>
+    <section class="block">
+      <h2>Ressources tunisiennes utiles</h2>
+      <p class="lead">Des sites qui regroupent cours, séries et vidéos conformes au programme. Les liens s'ouvrent dans un nouvel onglet.</p>
+      <div class="res">
+        <a href="https://www.devoir.tn/secondaire/4-%C3%A8me-ann%C3%A9es.html" target="_blank" rel="noopener"><strong>Devoir.tn</strong><span>Bibliothèque de vidéos pédagogiques pour la 4ᵉ année secondaire.</span></a>
+        <a href="https://www.devoirat.net/maths/cours-maths/4%C3%A8me-ann%C3%A9e-bac/" target="_blank" rel="noopener"><strong>Devoirat.net</strong><span>Cours et séries d'exercices en PDF, classés par section.</span></a>
+      </div>
+    </section>
+    <section class="block">
+      <h2>Questions fréquentes</h2>
+      <details class="faq"><summary>Mes progrès sont-ils sauvegardés ?</summary><p>Oui, mais uniquement dans ce navigateur : les leçons terminées, les vidéos ajoutées et le temps de révision. Si vous changez d'appareil ou videz les données du navigateur, ils disparaissent.</p></details>
+      <details class="faq"><summary>Comment ajouter une vidéo à une leçon ?</summary><p>Ouvrez la leçon, cliquez sur « Chercher sur YouTube », puis collez le lien de la vidéo choisie dans la case prévue. Le webmaster peut aussi l'ajouter pour tous dans le fichier data.js.</p></details>
+      <details class="faq"><summary>Où trouver les sujets du bac corrigés ?</summary><p>Chaque matière a un bloc « Sujets du bac » et un lien vers l'archive de votre section. Le bac blanc chronométré vous aide à les travailler dans les conditions de l'examen.</p></details>
+      <details class="faq"><summary>Les dates et les coefficients sont-ils officiels ?</summary><p>Non, ils sont indicatifs. Vérifiez toujours le calendrier et les coefficients publiés par le ministère de l'Éducation.</p></details>
+    </section>`;
+  startCountdown();
+}
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2026 BAC Education Platform | Tous droits réservés</p>
-    </footer>
+function sectionView(s) {
+  document.title = `${s.nom} — ${SITE.nom}`;
+  app.innerHTML = `
+    <nav class="crumbs"><a href="#/">Accueil</a> / ${esc(s.nom)}</nav>
+    <h1 class="page-title" style="--c:${s.couleur}">${esc(s.nom)}<span class="ar" lang="ar" dir="rtl">${esc(s.ar)}</span></h1>
+    <p class="lead">${esc(s.desc || '')}</p>
+    ${s.archive ? `<p><a class="btn" href="${esc(s.archive)}" target="_blank" rel="noopener">Archive des sujets corrigés de la section</a></p>` : ''}
+    <ul class="subjects" style="--c:${s.couleur}">
+      ${s.matieres.map(m => {
+        const n = count(m), d = doneCount(s, m);
+        return `<li><a class="subject" href="#/s/${s.id}/${m.id}">
+          <h3><span class="i" aria-hidden="true">${ICONS[m.id] || "📘"}</span><span>${esc(m.nom)}${m.ar ? ` <span lang="ar" dir="rtl">· ${esc(m.ar)}</span>` : ''}</span></h3>
+          <span>${n ? `${n} leçon${n > 1 ? 's' : ''} · ${d} terminée${d > 1 ? 's' : ''}` : 'Bientôt disponible'}</span>
+          ${n ? `<div class="bar"><i style="width:${Math.round(d / n * 100)}%"></i></div>` : ''}
+        </a></li>`;
+      }).join('')}
+    </ul>`;
+}
 
-    <script src="data.js"></script>
-    <script src="script.js"></script>
+function extras(s, m, idx) {
+  const n = m.lecons.length;
+  const nav = n > 1 ? `<div class="pn">${idx > 0 ? `<a class="btn" href="#/s/${s.id}/${m.id}/${idx - 1}">Leçon précédente</a>` : '<span></span>'}${idx < n - 1 ? `<a class="btn" href="#/s/${s.id}/${m.id}/${idx + 1}">Leçon suivante</a>` : ''}</div>` : '';
+  const an = m.annales || [];
+  const ann = an.length ? `<section class="annales"><h3>Sujets du bac</h3><ul>${an.map(a => `<li><span>Bac ${esc(a.annee)} · ${esc(a.session)}</span>${a.sujet ? `<a class="btn" href="${esc(embedPdf(a.sujet))}" target="_blank" rel="noopener">Sujet</a>` : '<span class="soon">Sujet à venir</span>'}${a.corrige ? `<a class="btn" href="${esc(embedPdf(a.corrige))}" target="_blank" rel="noopener">Corrigé</a>` : '<span class="soon">Corrigé à venir</span>'}</li>`).join('')}</ul>${s.archive ? `<p class="hint">Plus de sujets et corrigés : <a href="${esc(s.archive)}" target="_blank" rel="noopener">archive de la section ${esc(s.nom)}</a>.</p>` : ''}</section>` : '';
+  const lc = m.lecons[idx];
+  let partners = '';
+  if (lc) {
+    const cl = chainLinks(m, lc);
+    const hasVid = videoList(s, m, idx, lc).length > 0;
+    const form = !hasVid && (lc.pdf || lc.serie) ? linkForm(false) : '';
+    if (cl || form) partners = `<section class="partners"><h3>Vidéos des chaînes partenaires</h3>${cl ? `<div class="actions">${cl}</div><p class="hint">Cherchez cette leçon dans la chaîne, puis collez le lien de la vidéo ici pour l'afficher dans la leçon.</p>` : ''}${form}</section>`;
+  }
+  return nav + partners + ann;
+}
+
+let currentTab = null, currentVid = 0;
+let theater = true;
+try { theater = localStorage.getItem('bac-theater') !== '0'; } catch (e) {}
+const isYt = u => /^https?:\/\/(www\.|m\.)?(youtube\.com|youtu\.be|youtube-nocookie\.com)/i.test(u);
+const fileNotice = () => location.protocol === 'file:'
+  ? `<p class="notice"><strong>YouTube refuse la lecture quand le site est ouvert comme simple fichier (erreur 153).</strong> Mettez le site en ligne (GitHub Pages, Netlify, Cloudflare Pages) ou lancez un serveur local avec <code>python -m http.server</code>, puis ouvrez <code>http://localhost:8000</code>. En attendant, utilisez « Ouvrir sur YouTube ».</p>` : '';
+const mineOf = id => { const v = vids[id]; if (!v) return []; return (Array.isArray(v) ? v : [v]).map(x => typeof x === 'string' ? { url: x } : x); };
+const setMine = (id, arr) => { if (arr.length) vids[id] = arr; else delete vids[id]; saveVids(); };
+/* Toutes les vidéos d'une leçon : celles de data.js (video, videos) puis celles ajoutées dans ce navigateur */
+function videoList(s, m, idx, l) {
+  const out = [];
+  const add = (v, perso, k) => { if (!v) return; const o = typeof v === 'string' ? { url: v } : v; if (o.url) out.push({ titre: o.titre || '', url: o.url, perso, k }); };
+  add(l.video, false);
+  (l.videos || []).forEach(v => add(v, false));
+  mineOf(lid(s, m, idx)).forEach((v, k) => add(v, true, k));
+  return out;
+}
+const vlabel = (v, k) => v.titre || (/[?&]list=|\/playlist/.test(v.url) ? 'Playlist YouTube' : `Vidéo ${k + 1}`);
+const linkForm = open => `<details class="addbox" ${open ? 'open' : ''}><summary>Ajouter une vidéo ou une playlist</summary>
+  <p class="hint">Collez le lien d'une playlist YouTube (youtube.com/playlist?list=…) pour afficher toute la série d'une leçon, ou plusieurs liens de vidéos, un par ligne.</p>
+  <textarea id="vidIn" class="linkin" rows="3" placeholder="https://www.youtube.com/playlist?list=…" aria-label="Liens des vidéos"></textarea>
+  <div class="addvid"><input id="vidTitle" type="text" maxlength="80" placeholder="Titre (facultatif, pour un seul lien)" aria-label="Titre"><button class="btn primary" id="vidAdd">Ajouter</button></div></details>`;
+
+function subjectView(s, m, idx, tab) {
+  document.title = `${m.nom} — ${s.nom} — ${SITE.nom}`;
+  const l = m.lecons[idx], id = lid(s, m, idx);
+  const vl = l ? videoList(s, m, idx, l) : [];
+  if (currentVid >= vl.length) currentVid = 0;
+  const cur = vl[currentVid];
+  if (l) { try { localStorage.setItem('bac-last', JSON.stringify({ s: s.id, m: m.id, i: idx })); } catch (e) {} }
+  const list = m.lecons.length ? `
+    <aside class="lessons" aria-label="Leçons">
+      <h2>${count(m)} leçons · ${doneCount(s, m)} terminée${doneCount(s, m) > 1 ? 's' : ''}</h2><div class="bar"><i style="width:${Math.round(doneCount(s, m) / count(m) * 100)}%"></i></div>
+      <div class="lgrid">${m.lecons.map((x, i) => `
+        <div class="lesson ${i === idx ? 'on' : ''}">
+          <a href="#/s/${s.id}/${m.id}/${i}" ${i === idx ? 'aria-current="true"' : ''}>${esc(x.titre)}</a>
+          <button class="tick" data-id="${lid(s, m, i)}" aria-pressed="${!!done[lid(s, m, i)]}" aria-label="Marquer « ${esc(x.titre)} » comme terminée" title="Terminée">✓</button>
+        </div>`).join('')}</div>
+    </aside>` : '';
+
+  const tools = extra => `<div class="ptools"><button class="btn" id="bTheater">${theater ? 'Réduire' : 'Agrandir'}</button><button class="btn" id="bFull">Plein écran</button>${extra || ''}</div>`;
+  let viewer;
+  if (!l) {
+    viewer = `<div class="empty"><strong>Les leçons arrivent bientôt.</strong>Revenez dans quelques jours ou choisissez une autre matière.</div>`;
+  } else {
+    const tabs = [];
+    if (vl.length) tabs.push(['video', vl.length > 1 ? `Vidéos (${vl.length})` : 'Vidéo']);
+    if (l.pdf) tabs.push(['pdf', 'Cours PDF']);
+    if (l.serie) tabs.push(['serie', 'Exercices']);
+    const active = tabs.find(t => t[0] === tab) ? tab : (tabs[0] && tabs[0][0]);
+    let body;
+    if (!active) body = `<div class="empty"><strong>Pas encore de contenu pour cette leçon.</strong>Trouvez une vidéo ou une playlist sur ce thème, puis collez son lien ici pour la garder dans la leçon.
+        <div class="actions" style="justify-content:center;margin-top:1rem"><a class="btn" href="${esc(ytSearch(s, m, l))}" target="_blank" rel="noopener">Chercher sur YouTube</a><a class="btn" href="${esc(pdfSearch(s, m, l))}" target="_blank" rel="noopener">Chercher le cours en PDF</a></div>
+        <div class="empty-form">${linkForm(true)}</div>
+        <p class="hint">Les liens sont enregistrés dans ce navigateur. Pour les ajouter pour tous les élèves, copiez-les dans data.js.</p></div>`;
+    else if (active === 'video') {
+      const plist = vl.length > 1 ? `<section class="vplaylist"><h3>Playlist de la leçon · ${vl.length} vidéos</h3><ol>${vl.map((v, k) => `<li class="${k === currentVid ? 'on' : ''}"><button data-v="${k}">${k + 1}. ${esc(vlabel(v, k))}</button>${v.perso ? `<button class="x" data-del="${v.k}" aria-label="Retirer cette vidéo">×</button>` : ''}</li>`).join('')}</ol></section>` : '';
+      body = `${isYt(cur.url) ? fileNotice() : ''}
+        <div class="frame video"><iframe src="${esc(embedVideo(cur.url))}" title="${esc(l.titre)}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        ${tools(`<a class="btn" href="${esc(cur.url)}" target="_blank" rel="noopener">${isYt(cur.url) ? 'Ouvrir sur YouTube' : 'Ouvrir la vidéo'}</a>${vl.length > 1 ? '<button class="btn" id="bNextV">Vidéo suivante</button>' : ''}${vl.length === 1 && cur.perso ? '<button class="btn" id="vidDel">Retirer cette vidéo</button>' : ''}`)}
+        ${plist}${linkForm(false)}
+        <div class="actions"><a class="btn" href="${esc(ytSearch(s, m, l))}" target="_blank" rel="noopener">Autres vidéos sur ce thème</a></div>`;
+    } else {
+      const src = active === 'pdf' ? l.pdf : l.serie;
+      body = `<div class="frame pdf"><iframe src="${esc(embedPdf(src))}" title="${esc(l.titre)}" loading="lazy"></iframe></div>
+        ${tools(`<a class="btn" href="${esc(embedPdf(src))}" target="_blank" rel="noopener">Ouvrir dans un nouvel onglet</a><a class="btn" href="${esc(downloadLink(src))}" download>Télécharger</a>`)}`;
+    }
+    viewer = `<h2>${esc(l.titre)}</h2>
+      ${tabs.length ? `<div class="tabs" role="tablist">${tabs.map(t => `<button role="tab" data-tab="${t[0]}" aria-selected="${t[0] === active}">${t[1]}</button>`).join('')}</div>` : ''}
+      ${body}`;
+  }
+
+  app.innerHTML = `
+    <nav class="crumbs"><a href="#/">Accueil</a> / <a href="#/s/${s.id}">${esc(s.nom)}</a> / ${esc(m.nom)}</nav>
+    <h1 class="page-title" style="--c:${s.couleur}">${esc(m.nom)}</h1>
+    ${(hasQcm(m.id) || hasFiches(m.id)) ? `<div class="subj-actions">${hasQcm(m.id) ? `<a class="btn" href="#/qcm/${m.id}">QCM d'entraînement</a>` : ''}${hasFiches(m.id) ? `<a class="btn" href="#/fiches/${m.id}">Fiches de révision</a>` : ''}</div>` : ''}
+    <div class="study ${theater ? 'theater' : ''}" style="--c:${s.couleur}">
+      <div class="viewer">${viewer}${extras(s, m, idx)}</div>
+      ${list}
+    </div>`;
+
+  const redraw = () => subjectView(s, m, idx, currentTab);
+  app.querySelectorAll('.tabs button').forEach(b => b.onclick = () => { currentTab = b.dataset.tab; redraw(); });
+  app.querySelectorAll('.vplaylist [data-v]').forEach(b => b.onclick = () => { currentVid = +b.dataset.v; currentTab = 'video'; redraw(); });
+  app.querySelectorAll('.vplaylist [data-del]').forEach(b => b.onclick = () => { const a = mineOf(id); a.splice(+b.dataset.del, 1); setMine(id, a); currentVid = 0; redraw(); });
+  const bt = document.getElementById('bTheater');
+  if (bt) bt.onclick = () => { theater = !theater; try { localStorage.setItem('bac-theater', theater ? '1' : '0'); } catch (e) {} redraw(); };
+  const bf = document.getElementById('bFull');
+  if (bf) bf.onclick = () => { const f = app.querySelector('.frame'); const fn = f && (f.requestFullscreen || f.webkitRequestFullscreen); if (fn) fn.call(f); };
+  const bn = document.getElementById('bNextV');
+  if (bn) bn.onclick = () => { currentVid = (currentVid + 1) % vl.length; currentTab = 'video'; redraw(); };
+  const vd = document.getElementById('vidDel');
+  if (vd) vd.onclick = () => { setMine(id, []); currentVid = 0; currentTab = null; redraw(); };
+  const vi = document.getElementById('vidIn'), va = document.getElementById('vidAdd');
+  if (va) va.onclick = () => {
+    const urls = vi.value.split(/[\s,]+/).filter(u => /^https?:\/\//i.test(u));
+    if (!urls.length) { vi.focus(); return; }
+    const t = (document.getElementById('vidTitle').value || '').trim(), a = mineOf(id);
+    urls.forEach(u => a.push({ url: u, titre: urls.length === 1 ? t : '' }));
+    setMine(id, a);
+    currentVid = videoList(s, m, idx, l).length - urls.length; currentTab = 'video'; redraw();
+  };
+  app.querySelectorAll('.tick').forEach(b => b.onclick = () => {
+    const did = b.dataset.id;
+    done[did] = !done[did]; if (!done[did]) delete done[did];
+    saveDone(); b.setAttribute('aria-pressed', !!done[did]);
+    const dc = doneCount(s, m), h2 = app.querySelector('.lessons h2'), bar = app.querySelector('.lessons .bar i');
+    if (h2) h2.textContent = `${count(m)} leçons · ${dc} terminée${dc > 1 ? 's' : ''}`;
+    if (bar) bar.style.width = Math.round(dc / count(m) * 100) + '%';
+  });
+}
+
+function searchView(term) {
+  const t = term.toLowerCase();
+  const hits = [];
+  SECTIONS.forEach(s => s.matieres.forEach(m => {
+    if (m.nom.toLowerCase().includes(t) || s.nom.toLowerCase().includes(t))
+      hits.push({ href: `#/s/${s.id}/${m.id}`, titre: m.nom, ctx: s.nom });
+    m.lecons.forEach((l, i) => {
+      if (l.titre.toLowerCase().includes(t)) hits.push({ href: `#/s/${s.id}/${m.id}/${i}`, titre: l.titre, ctx: `${s.nom} · ${m.nom}` });
+    });
+  }));
+  document.title = `Recherche — ${SITE.nom}`;
+  app.innerHTML = `
+    <nav class="crumbs"><a href="#/">Accueil</a> / Recherche</nav>
+    <h1 class="page-title">${hits.length} résultat${hits.length > 1 ? 's' : ''} pour « ${esc(term)} »</h1>
+    ${hits.length ? `<ul class="results">${hits.map(h => `<li><a href="${h.href}">${esc(h.titre)}<br><small>${esc(h.ctx)}</small></a></li>`).join('')}</ul>`
+      : `<div class="empty" style="margin-top:1.5rem"><strong>Aucun résultat.</strong>Essayez un autre mot, par exemple « limites » ou « philosophie ».</div>`}`;
+}
+
+/* ---------- Outils de révision ---------- */
+const ticks = [];
+const stopTicks = () => { ticks.forEach(clearInterval); ticks.length = 0; };
+const pad = n => String(n).padStart(2, '0');
+const q = id => document.getElementById(id);
+const fmt = ms => { const t = Math.max(0, Math.ceil(ms / 1000)); const h = Math.floor(t / 3600), m = Math.floor(t % 3600 / 60), s = t % 60; return (h ? pad(h) + ':' : '') + pad(m) + ':' + pad(s); };
+const hm = min => min >= 60 ? `${Math.floor(min / 60)} h ${pad(min % 60)}` : `${min} min`;
+const ALL_SUBJECTS = [...new Set(SECTIONS.flatMap(s => s.matieres.map(m => m.nom)))];
+const mention = m => m >= 16 ? 'mention Très bien' : m >= 14 ? 'mention Bien' : m >= 12 ? 'mention Assez bien' : m >= 10 ? 'mention Passable' : 'sous la moyenne';
+const secOptions = () => SECTIONS.map(x => `<option value="${x.id}">${esc(x.nom)}</option>`).join('');
+
+const TOOLS = [
+  { id: 'moyenne', ico: '🧮', nom: 'Moyenne et objectif', desc: "Calculez votre moyenne et la note à viser dans les matières qu'il reste à passer." },
+  { id: 'bac-blanc', ico: '⏱️', nom: 'Bac blanc chronométré', desc: "Travaillez un sujet dans les conditions de l'examen, avec un compte à rebours." },
+  { id: 'seance', ico: '🍅', nom: 'Séance de révision', desc: 'Minuteur Pomodoro et temps révisé par matière sur la semaine.' },
+  { id: 'planning', ico: '🗓️', nom: 'Planning de la semaine', desc: 'Un programme sur 7 jours selon votre section et vos heures de travail.' },
+  { id: 'respiration', ico: '🌬️', nom: 'Respiration guidée', desc: 'Deux minutes pour retrouver le calme avant de réviser ou de passer un examen.' },
+  { id: 'qcm', ico: '✅', nom: 'QCM et fiches de révision', desc: "Quiz d'entraînement avec correction et fiches à retourner, par matière." },
+  { id: 'sql', ico: '🗄️', nom: 'Jeu SQL', desc: "Dix missions pour apprendre SELECT, WHERE, GROUP BY… directement dans le navigateur." },
+  { id: 'devoirs', ico: '📝', nom: 'Mes devoirs', desc: 'Notez vos devoirs à rendre, avec la matière et la date limite.' },
+  { id: 'progression', ico: '📈', nom: 'Ma progression', desc: 'Leçons terminées, scores de QCM, missions SQL et temps de révision.' }
+];
+const shell = (t, inner) => {
+  document.title = `${t.nom} — ${SITE.nom}`;
+  return `<nav class="crumbs"><a href="#/">Accueil</a> / <a href="#/outils">Outils</a> / ${esc(t.nom)}</nav>
+    <h1 class="page-title">${esc(t.nom)}</h1><p class="lead">${esc(t.desc)}</p><div class="tool-body">${inner}</div>`;
+};
+const toolsGrid = () => `<ul class="tools">${TOOLS.map(t => `<li><a class="tool" href="#/outils/${t.id}"><span class="i" aria-hidden="true">${t.ico}</span><strong>${esc(t.nom)}</strong><span>${esc(t.desc)}</span></a></li>`).join('')}</ul>`;
+
+function toolsHome() {
+  document.title = `Outils de révision — ${SITE.nom}`;
+  app.innerHTML = `<nav class="crumbs"><a href="#/">Accueil</a> / Outils</nav>
+    <h1 class="page-title">Outils de révision</h1>
+    <p class="lead">Gratuits et sans compte. Vos données restent dans ce navigateur.</p>${toolsGrid()}`;
+}
+
+/* 1. Moyenne et objectif */
+function toolMoyenne() {
+  app.innerHTML = shell(TOOLS[0], `
+    <div class="form">
+      <label>Section<select id="mSec">${secOptions()}</select></label>
+      <label>Moyenne visée<input id="mCible" type="number" min="0" max="20" step="0.25" value="12" inputmode="decimal"></label>
+    </div>
+    <div class="notes"><div class="notes-h"><span>Matière</span><span>Note /20</span><span>Coef.</span></div><div id="mRows"></div></div>
+    <div class="result" id="mRes" aria-live="polite"></div>
+    <p class="hint">Laissez vide les matières pas encore passées. Entrez les coefficients officiels de votre section, car ils changent d'une section à l'autre. Le calcul est indicatif : la moyenne générale officielle peut combiner d'autres éléments.</p>`);
+  const calc = () => {
+    let sf = 0, cf = 0, cr = 0;
+    q('mRows').querySelectorAll('.row').forEach(r => {
+      const c = parseFloat(r.querySelector('.c').value) || 0, v = parseFloat(r.querySelector('.n').value);
+      if (!isNaN(v)) { sf += c * Math.min(20, Math.max(0, v)); cf += c; } else cr += c;
+    });
+    const cible = parseFloat(q('mCible').value);
+    let h = '';
+    if (cf > 0) { const mo = sf / cf; h += `<p>Moyenne des matières saisies : <strong>${mo.toFixed(2)} / 20</strong> (${mention(mo)})</p>`; }
+    if (cr > 0 && !isNaN(cible)) {
+      const need = (cible * (cf + cr) - sf) / cr;
+      h += need > 20 ? `<p>Pour atteindre ${cible}, il faudrait plus de 20 / 20 dans les matières restantes. Visez un objectif plus bas.</p>`
+        : need <= 0 ? `<p>Objectif déjà atteint, même avec 0 dans les matières restantes.</p>`
+        : `<p>Pour atteindre <strong>${cible}</strong>, visez en moyenne <strong>${need.toFixed(2)} / 20</strong> dans les matières restantes.</p>`;
+    }
+    q('mRes').innerHTML = h || '<p>Saisissez vos notes pour voir le résultat.</p>';
+  };
+  const draw = () => {
+    const sec = SECTIONS.find(x => x.id === q('mSec').value);
+    q('mRows').innerHTML = sec.matieres.map(m => `<div class="row"><span>${esc(m.nom)}</span><input class="n" type="number" min="0" max="20" step="0.25" inputmode="decimal" aria-label="Note de ${esc(m.nom)}"><input class="c" type="number" min="0" step="0.5" value="1" inputmode="decimal" aria-label="Coefficient de ${esc(m.nom)}"></div>`).join('');
+    calc();
+  };
+  q('mSec').onchange = draw; app.oninput = calc; draw();
+}
+
+/* 2. Bac blanc */
+function toolBacBlanc() {
+  app.innerHTML = shell(TOOLS[1], `
+    <div class="form">
+      <label>Section<select id="bSec">${secOptions()}</select></label>
+      <label>Matière<select id="bMat"></select></label>
+      <label>Durée<select id="bDur"><option value="60">1 h</option><option value="90">1 h 30</option><option value="120">2 h</option><option value="180" selected>3 h</option><option value="240">4 h</option></select></label>
+    </div>
+    <button class="btn primary" id="bGo">Démarrer le chronomètre</button>
+    <div id="bRun"></div>
+    <p class="hint">Choisissez la durée prévue pour l'épreuve : elle varie selon la matière et la section.</p>`);
+  const sec = () => SECTIONS.find(x => x.id === q('bSec').value);
+  const fill = () => { q('bMat').innerHTML = sec().matieres.map(m => `<option value="${m.id}">${esc(m.nom)}</option>`).join(''); };
+  q('bSec').onchange = fill; fill();
+  q('bGo').onclick = () => {
+    const s = sec(), m = s.matieres.find(x => x.id === q('bMat').value);
+    const end = Date.now() + parseInt(q('bDur').value, 10) * 60000;
+    const sujets = m.annales.filter(a => a.sujet).map(a => `<a class="btn" href="${esc(embedPdf(a.sujet))}" target="_blank" rel="noopener">Sujet ${esc(a.annee)}</a>`).join('');
+    q('bRun').innerHTML = `<div class="timer" id="bTm" role="timer"></div>
+      <div class="actions"><button class="btn" id="bStop">Terminer</button>${sujets}${s.archive ? `<a class="btn" href="${esc(s.archive)}" target="_blank" rel="noopener">Choisir un sujet dans l'archive</a>` : ''}</div>`;
+    const upd = () => {
+      const left = end - Date.now(), el = q('bTm');
+      el.textContent = left > 0 ? fmt(left) : 'Temps écoulé';
+      el.className = 'timer' + (left <= 300000 ? ' danger' : left <= 900000 ? ' warn' : '');
+      document.title = left > 0 ? `${fmt(left)} — Bac blanc` : 'Temps écoulé — Bac blanc';
+      if (left <= 0) stopTicks();
+    };
+    stopTicks(); upd(); ticks.push(setInterval(upd, 500));
+    q('bStop').onclick = () => { stopTicks(); document.title = `Bac blanc — ${SITE.nom}`; q('bRun').innerHTML = '<div class="result"><p>Chrono arrêté. Corrigez-vous avec le corrigé du sujet, puis notez vos erreurs.</p></div>'; };
+  };
+}
+
+/* 3. Séance Pomodoro + temps révisé */
+const getFocus = () => { try { return JSON.parse(localStorage.getItem('bac-focus') || '{}'); } catch (e) { return {}; } };
+const dayKey = d => d.toLocaleDateString('sv-SE');
+function addFocus(mat, min) {
+  if (min <= 0) return;
+  const f = getFocus(), k = dayKey(new Date());
+  f[k] = f[k] || {}; f[k][mat] = (f[k][mat] || 0) + min;
+  try { localStorage.setItem('bac-focus', JSON.stringify(f)); } catch (e) {}
+}
+function drawStats() {
+  const f = getFocus(), per = {}; let tot = 0, today = 0;
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(); d.setDate(d.getDate() - i);
+    const e = f[dayKey(d)] || {};
+    Object.keys(e).forEach(m => { per[m] = (per[m] || 0) + e[m]; tot += e[m]; if (i === 0) today += e[m]; });
+  }
+  const max = Math.max(1, ...Object.values(per));
+  q('sStats').innerHTML = tot
+    ? `<h3>Votre semaine</h3><p>Aujourd'hui : <strong>${hm(today)}</strong> · 7 derniers jours : <strong>${hm(tot)}</strong></p>` +
+      Object.entries(per).sort((a, b) => b[1] - a[1]).map(([m, v]) => `<div class="stat"><span>${esc(m)}</span><div class="bar"><i style="width:${Math.round(v / max * 100)}%"></i></div><span>${hm(v)}</span></div>`).join('')
+    : '<p class="hint">Aucune séance enregistrée pour le moment.</p>';
+}
+function toolSeance() {
+  app.innerHTML = shell(TOOLS[2], `
+    <div class="form">
+      <label>Matière<select id="sMat">${ALL_SUBJECTS.map(n => `<option>${esc(n)}</option>`).join('')}</select></label>
+      <label>Travail (min)<input id="sW" type="number" min="5" max="90" value="25"></label>
+      <label>Pause (min)<input id="sB" type="number" min="1" max="30" value="5"></label>
+    </div>
+    <button class="btn primary" id="sGo">Démarrer la séance</button>
+    <div id="sRun"></div>
+    <div id="sStats" class="stats-box"></div>`);
+  drawStats();
+  q('sGo').onclick = () => {
+    const mat = q('sMat').value, W = Math.max(1, parseInt(q('sW').value, 10) || 25), B = Math.max(1, parseInt(q('sB').value, 10) || 5);
+    let phase = 'work', t0, end;
+    const begin = ph => { phase = ph; t0 = Date.now(); end = t0 + (ph === 'work' ? W : B) * 60000; };
+    q('sRun').innerHTML = `<div class="timer" id="sTm" role="timer"></div><p class="phase" id="sPh"></p><div class="actions"><button class="btn" id="sStop">Arrêter la séance</button></div>`;
+    const upd = () => {
+      let left = end - Date.now();
+      if (left <= 0) { if (phase === 'work') { addFocus(mat, W); drawStats(); begin('break'); } else begin('work'); left = end - Date.now(); }
+      q('sTm').textContent = fmt(left);
+      q('sPh').textContent = phase === 'work' ? `Concentrez-vous sur : ${mat}` : 'Pause : levez-vous, buvez un verre d\'eau.';
+      document.title = `${fmt(left)} — ${phase === 'work' ? 'Travail' : 'Pause'}`;
+    };
+    stopTicks(); begin('work'); upd(); ticks.push(setInterval(upd, 500));
+    q('sStop').onclick = () => {
+      if (phase === 'work') addFocus(mat, Math.floor((Date.now() - t0) / 60000));
+      stopTicks(); document.title = `Séance — ${SITE.nom}`; q('sRun').innerHTML = ''; drawStats();
+    };
+  };
+}
+
+/* 4. Planning de la semaine */
+function toolPlanning() {
+  app.innerHTML = shell(TOOLS[3], `
+    <div class="form">
+      <label>Section<select id="pSec">${secOptions()}</select></label>
+      <label>Heures de révision par jour<select id="pH">${[1, 2, 3, 4, 5, 6, 7, 8].map(n => `<option ${n === 3 ? 'selected' : ''}>${n}</option>`).join('')}</select></label>
+    </div>
+    <div id="pOut"></div>
+    <p class="hint">Chaque créneau dure 1 h. Le plan reprend les leçons que vous n'avez pas encore marquées comme terminées et équilibre les matières.</p>`);
+  const gen = () => {
+    const sec = SECTIONS.find(x => x.id === q('pSec').value), h = parseInt(q('pH').value, 10) || 3;
+    const qs = sec.matieres.map(m => ({ m, q: m.lecons.map((_, i) => i).filter(i => !done[lid(sec, m, i)]), n: 0 })).filter(x => x.q.length);
+    if (!qs.length) { q('pOut').innerHTML = '<div class="empty"><strong>Aucune leçon à planifier.</strong>Toutes les leçons sont terminées ou la section est vide.</div>'; return; }
+    const slots = [];
+    for (let k = 0; k < 7 * h; k++) {
+      const c = qs.filter(x => x.q.length);
+      if (!c.length) break;
+      c.sort((a, b) => b.q.length / (b.n + 1) - a.q.length / (a.n + 1));
+      const x = c[0]; slots.push({ m: x.m, i: x.q.shift() }); x.n++;
+    }
+    q('pOut').innerHTML = [...Array(7)].map((_, d) => {
+      const items = slots.slice(d * h, (d + 1) * h);
+      if (!items.length) return '';
+      const dt = new Date(); dt.setDate(dt.getDate() + d);
+      return `<section class="day"><h3>${esc(dt.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' }))}</h3><ol>${items.map(it => `<li><a href="#/s/${sec.id}/${it.m.id}/${it.i}"><strong>${esc(it.m.nom)}</strong> · ${esc(it.m.lecons[it.i].titre)}</a></li>`).join('')}</ol></section>`;
+    }).join('');
+  };
+  q('pSec').onchange = gen; q('pH').onchange = gen; gen();
+}
+
+/* 5. Respiration guidée */
+function toolRespiration() {
+  app.innerHTML = shell(TOOLS[4], `
+    <div class="breath-wrap"><div class="breath" id="brC" aria-hidden="true"></div><p class="breath-t" id="brT" aria-live="polite">Prêt ?</p></div>
+    <button class="btn primary" id="brGo">Commencer</button>
+    <p class="hint">8 cycles : inspirez 4 secondes, retenez 4 secondes, expirez 6 secondes.</p>`);
+  q('brGo').onclick = () => {
+    stopTicks();
+    let s = 0; const c = q('brC'), tx = q('brT'), cyc = 14, total = cyc * 8;
+    const step = () => {
+      if (s >= total) { tx.textContent = 'Bien joué. Vous pouvez reprendre.'; stopTicks(); return; }
+      const p = s % cyc;
+      if (p === 0) { tx.textContent = 'Inspirez'; c.style.transitionDuration = '4s'; c.style.transform = 'scale(1.15)'; }
+      else if (p === 4) tx.textContent = 'Retenez';
+      else if (p === 8) { tx.textContent = 'Expirez'; c.style.transitionDuration = '6s'; c.style.transform = 'scale(.7)'; }
+      s++;
+    };
+    step(); ticks.push(setInterval(step, 1000));
+  };
+}
+
+/* Compte à rebours (accueil) */
+function countdownBlock() {
+  const f = d => new Date(d).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  return `<section class="block"><h2>Dates clés du bac ${new Date(DATES.ecrit).getFullYear()}</h2>
+    <div class="cd">
+      <div><small>Début des épreuves écrites</small><b data-cd="ecrit">…</b><span>${esc(f(DATES.ecrit))}</span></div>
+      <div><small>Résultats</small><b data-cd="resultats">…</b><span>${esc(f(DATES.resultats))}</span></div>
+    </div><p class="hint">${esc(DATES.note)}</p></section>`;
+}
+function startCountdown() {
+  const upd = () => document.querySelectorAll('[data-cd]').forEach(el => {
+    const t = new Date(DATES[el.dataset.cd]).getTime() - Date.now();
+    if (t <= 0) { el.textContent = 'Terminé'; return; }
+    el.textContent = `${Math.floor(t / 864e5)} j ${pad(Math.floor(t % 864e5 / 36e5))} h ${pad(Math.floor(t % 36e5 / 6e4))} min ${pad(Math.floor(t % 6e4 / 1e3))} s`;
+  });
+  upd(); ticks.push(setInterval(upd, 1000));
+}
+
+const chainUrl = (c, titre) => c.channel
+  ? `https://www.youtube.com/channel/${c.channel}/search?query=${encodeURIComponent(titre)}`
+  : `https://www.youtube.com/results?search_query=${encodeURIComponent((c.requete || c.nom) + ' ' + titre)}`;
+const chainLinks = (m, l) => CHAINES.filter(c => c.matieres.includes(m.id))
+  .map(c => `<a class="btn" href="${esc(chainUrl(c, l.titre))}" target="_blank" rel="noopener">${esc(c.nom)}</a>`).join('');
+function chainesView() {
+  document.title = `Chaînes YouTube — ${SITE.nom}`;
+  app.innerHTML = `<nav class="crumbs"><a href="#/">Accueil</a> / Chaînes YouTube</nav>
+    <h1 class="page-title">Chaînes YouTube partenaires</h1>
+    <p class="lead">Trois sources de vidéos pour réviser. Le lecteur montre les vidéos publiées par la chaîne, dans l'ordre de publication. Pour une leçon précise, ouvrez la leçon : un bouton lance la recherche dans la chaîne.</p>
+    ${fileNotice()}
+    ${CHAINES.map(c => `<section class="chain">
+      <h2>${esc(c.nom)}</h2><p>${esc(c.desc)}</p>
+      ${c.channel ? `<div class="frame video"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=UU${esc(c.channel.slice(2))}" title="${esc(c.nom)}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>` : ''}
+      <div class="actions">
+        ${c.channel ? `<a class="btn" href="https://www.youtube.com/channel/${esc(c.channel)}" target="_blank" rel="noopener">Ouvrir la chaîne sur YouTube</a>` : `<a class="btn" href="${esc(chainUrl(c, 'cours'))}" target="_blank" rel="noopener">Chercher sur YouTube</a>`}
+        <a class="btn" href="${esc(c.site)}" target="_blank" rel="noopener">Site officiel</a>
+      </div></section>`).join('')}
+    <p class="hint">Certaines chaînes proposent aussi des cours payants sur leur site. Les vidéos YouTube restent accessibles gratuitement.</p>`;
+}
+
+/* ---------- Entraînement : QCM et fiches ---------- */
+const bankKey = id => ALIAS[id] || id;
+const subjName = id => { for (const s of SECTIONS) { const m = s.matieres.find(x => x.id === id); if (m) return m.nom; } return id; };
+const hasQcm = id => !!(QCM[bankKey(id)] || []).length;
+const hasFiches = id => !!(FICHES[bankKey(id)] || []).length;
+const getQcmBest = () => { try { return JSON.parse(localStorage.getItem('bac-qcm') || '{}'); } catch (e) { return {}; } };
+const trainHead = (key, titre) => `<nav class="crumbs"><a href="#/">Accueil</a> / <a href="#/outils/qcm">QCM et fiches</a> / ${esc(subjName(key))}</nav><h1 class="page-title">${esc(titre)} : ${esc(subjName(key))}</h1>`;
+
+function toolEntrainement() {
+  const t = TOOLS.find(x => x.id === 'qcm');
+  const keys = [...new Set(SECTIONS.flatMap(s => s.matieres.map(m => bankKey(m.id))))].filter(k => hasQcm(k) || hasFiches(k));
+  const best = getQcmBest();
+  app.innerHTML = shell(t, `<ul class="tools">${keys.map(k => `<li class="tool"><strong>${esc(subjName(k))}</strong>
+    <span>${[hasQcm(k) ? `${QCM[k].length} questions` : '', hasFiches(k) ? `${FICHES[k].length} fiches` : '', best[k] != null ? `meilleur score ${best[k]} %` : ''].filter(Boolean).join(' · ')}</span>
+    <div class="actions">${hasQcm(k) ? `<a class="btn" href="#/qcm/${k}">QCM</a>` : ''}${hasFiches(k) ? `<a class="btn" href="#/fiches/${k}">Fiches</a>` : ''}</div></li>`).join('')}</ul>
+    <p class="hint">La banque est en cours d'enrichissement. Ajoutez vos propres questions dans banque.js.</p>`);
+}
+
+function qcmView(id) {
+  const key = bankKey(id), bank = QCM[key];
+  if (!bank) return toolEntrainement();
+  document.title = `QCM ${subjName(key)} — ${SITE.nom}`;
+  const qs = [...bank].sort(() => Math.random() - .5);
+  let i = 0, score = 0;
+  const draw = () => {
+    const head = trainHead(key, 'QCM');
+    if (i >= qs.length) {
+      const pct = Math.round(score / qs.length * 100), best = getQcmBest();
+      if (best[key] == null || pct > best[key]) { best[key] = pct; try { localStorage.setItem('bac-qcm', JSON.stringify(best)); } catch (e) {} }
+      app.innerHTML = head + `<div class="result"><p>Score : <strong>${score} / ${qs.length}</strong> (${pct} %)</p>
+        <p>${pct >= 80 ? 'Excellent travail.' : pct >= 50 ? 'Bon début : relisez les fiches, puis recommencez.' : 'Reprenez les leçons et les fiches, puis réessayez.'}</p></div>
+        <div class="actions"><button class="btn primary" id="qAgain">Recommencer</button>${hasFiches(key) ? `<a class="btn" href="#/fiches/${key}">Voir les fiches</a>` : ''}</div>`;
+      q('qAgain').onclick = () => qcmView(id);
+      return;
+    }
+    const it = qs[i];
+    app.innerHTML = head + `<div class="quiz"><p class="qn">Question ${i + 1} sur ${qs.length}</p><h2>${esc(it.q)}</h2>
+      <div class="opts">${it.opts.map((o, k) => `<button class="opt" data-k="${k}">${esc(o)}</button>`).join('')}</div><div id="qFb" aria-live="polite"></div></div>`;
+    app.querySelectorAll('.opt').forEach(b => b.onclick = () => {
+      const ok = +b.dataset.k === it.r;
+      if (ok) score++;
+      app.querySelectorAll('.opt').forEach(x => { x.disabled = true; if (+x.dataset.k === it.r) x.classList.add('ok'); else if (x === b) x.classList.add('ko'); });
+      q('qFb').innerHTML = `<p class="fb ${ok ? 'ok' : 'ko'}"><strong>${ok ? 'Correct.' : 'Pas tout à fait.'}</strong> ${esc(it.e)}</p><button class="btn primary" id="qNext">${i + 1 < qs.length ? 'Question suivante' : 'Voir le score'}</button>`;
+      q('qNext').onclick = () => { i++; draw(); };
+    });
+  };
+  draw();
+}
+
+function fichesView(id) {
+  const key = bankKey(id), bank = FICHES[key];
+  if (!bank) return toolEntrainement();
+  document.title = `Fiches ${subjName(key)} — ${SITE.nom}`;
+  let deck = [...bank], i = 0, back = false;
+  const draw = () => {
+    app.innerHTML = trainHead(key, 'Fiches') + `<p class="qn">Fiche ${i + 1} sur ${deck.length}</p>
+      <button class="flash ${back ? 'back' : ''}" id="fl" aria-label="Retourner la fiche"><span class="side">${back ? 'Réponse' : 'Question'}</span><span class="txt">${esc(back ? deck[i].r : deck[i].q)}</span></button>
+      <div class="actions"><button class="btn" id="fPrev">Précédente</button><button class="btn primary" id="fFlip">Retourner</button><button class="btn" id="fNext">Suivante</button><button class="btn" id="fMix">Mélanger</button></div>`;
+    const go = d => { i = (i + d + deck.length) % deck.length; back = false; draw(); };
+    q('fl').onclick = q('fFlip').onclick = () => { back = !back; draw(); };
+    q('fPrev').onclick = () => go(-1); q('fNext').onclick = () => go(1);
+    q('fMix').onclick = () => { deck = [...deck].sort(() => Math.random() - .5); i = 0; back = false; draw(); };
+  };
+  draw();
+}
+
+/* ---------- Mini moteur SQL (SELECT) ---------- */
+function sqlRun(sql, tables) {
+  const re = /\s*(<=|>=|<>|!=|[(),*=<>;]|'[^']*'|\d+(?:\.\d+)?|[A-Za-z_][A-Za-z_0-9]*(?:\.[A-Za-z_][A-Za-z_0-9]*)?)/y;
+  const toks = []; const src = sql.trim(); let pos = 0;
+  while (pos < src.length) {
+    re.lastIndex = pos; const m = re.exec(src);
+    if (!m) { if (/^\s*$/.test(src.slice(pos))) break; throw new Error(`Caractère inattendu près de « ${src.slice(pos, pos + 10).trim()} »`); }
+    toks.push(m[1]); pos = re.lastIndex;
+  }
+  let p = 0;
+  const up = () => (toks[p] || '').toUpperCase();
+  const eat = w => { if (up() === w) { p++; return true; } return false; };
+  const need = w => { if (!eat(w)) throw new Error(`« ${w} » attendu${toks[p] ? ' avant « ' + toks[p] + ' »' : ' à la fin de la requête'}`); };
+  const ident = () => { const t = toks[p]; if (!t || !/^[A-Za-z_]/.test(t)) throw new Error('Un nom de colonne ou de table est attendu'); p++; return t.includes('.') ? t.split('.')[1] : t; };
+  const getv = (row, name) => { const k = Object.keys(row).find(x => x.toLowerCase() === name.toLowerCase()); if (k === undefined) throw new Error(`Colonne inconnue : ${name}`); return row[k]; };
+  const operand = () => {
+    const t = toks[p++];
+    if (t === undefined) throw new Error('Une valeur est attendue');
+    if (t[0] === "'") { const v = t.slice(1, -1); return () => v; }
+    if (/^\d/.test(t)) { const v = parseFloat(t); return () => v; }
+    if (!/^[A-Za-z_]/.test(t)) throw new Error(`Valeur inattendue « ${t} »`);
+    const name = t.includes('.') ? t.split('.')[1] : t;
+    return r => getv(r, name);
+  };
+  const likeRe = pat => new RegExp('^' + String(pat).replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/%/g, '.*').replace(/_/g, '.') + '$', 'i');
+  let parseOr;
+  const pred = () => {
+    if (eat('(')) { const e = parseOr(); need(')'); return e; }
+    const a = operand();
+    if (eat('LIKE')) { const b = operand(); return r => likeRe(b(r)).test(String(a(r))); }
+    if (eat('BETWEEN')) { const lo = operand(); need('AND'); const hi = operand(); return r => a(r) >= lo(r) && a(r) <= hi(r); }
+    if (eat('IN')) { need('('); const l = [operand()]; while (eat(',')) l.push(operand()); need(')'); return r => l.some(f => f(r) == a(r)); }
+    const op = toks[p++];
+    if (!['=', '<>', '!=', '<', '>', '<=', '>='].includes(op)) throw new Error(`Opérateur de comparaison attendu${op ? ' au lieu de « ' + op + ' »' : ''}`);
+    const b = operand();
+    return r => { const x = a(r), y = b(r); switch (op) { case '=': return x == y; case '<>': case '!=': return x != y; case '<': return x < y; case '>': return x > y; case '<=': return x <= y; default: return x >= y; } };
+  };
+  const not = () => eat('NOT') ? (e => r => !e(r))(not()) : pred();
+  const and = () => { let l = not(); while (eat('AND')) { const a = l, b = not(); l = r => a(r) && b(r); } return l; };
+  parseOr = () => { let l = and(); while (eat('OR')) { const a = l, b = and(); l = r => a(r) || b(r); } return l; };
+
+  need('SELECT');
+  const distinct = eat('DISTINCT'); const items = [];
+  do {
+    if (toks[p] === '*') { p++; items.push({ star: true }); }
+    else if (['COUNT', 'SUM', 'AVG', 'MIN', 'MAX'].includes(up()) && toks[p + 1] === '(') {
+      const fn = up(); p += 2; let arg;
+      if (toks[p] === '*') { p++; arg = '*'; } else arg = ident();
+      need(')'); items.push({ fn, arg, label: `${fn}(${arg})` });
+    } else { const c = ident(); items.push({ col: c, label: c }); }
+    if (eat('AS')) items[items.length - 1].label = ident();
+  } while (eat(','));
+  need('FROM');
+  const tn = ident(); const tkey = Object.keys(tables).find(k => k.toLowerCase() === tn.toLowerCase());
+  if (!tkey) throw new Error(`Table inconnue : ${tn}`);
+  const table = tables[tkey];
+  const where = eat('WHERE') ? parseOr() : null;
+  let group = null, order = null, desc = false, limit = null;
+  if (eat('GROUP')) { need('BY'); group = ident(); }
+  if (eat('ORDER')) { need('BY'); order = ident(); desc = eat('DESC'); if (!desc) eat('ASC'); }
+  if (eat('LIMIT')) { limit = parseInt(toks[p++], 10); if (isNaN(limit)) throw new Error('LIMIT attend un nombre'); }
+  eat(';');
+  if (p < toks.length) throw new Error(`Instruction inattendue : « ${toks[p]} »`);
+
+  const cmp = (x, y) => (typeof x === 'number' && typeof y === 'number') ? x - y : String(x).localeCompare(String(y), 'fr');
+  let rows = table.rows.filter(r => !where || where(r));
+  const cols = items.flatMap(i => i.star ? table.cols : [i.label]);
+  let out;
+  if (items.some(i => i.fn) || group) {
+    const groups = new Map();
+    if (group) rows.forEach(r => { const k = getv(r, group); if (!groups.has(k)) groups.set(k, []); groups.get(k).push(r); });
+    else groups.set('', rows);
+    out = [...groups.values()].map(g => items.map(i => {
+      if (i.star) throw new Error("« * » ne peut pas être mélangé avec une fonction d'agrégat");
+      if (!i.fn) {
+        if (!group || i.col.toLowerCase() !== group.toLowerCase()) throw new Error(`« ${i.col} » doit être dans GROUP BY ou dans une fonction d'agrégat`);
+        return getv(g[0], i.col);
+      }
+      const vals = i.arg === '*' ? g : g.map(r => getv(r, i.arg)).filter(v => v != null);
+      if (i.fn === 'COUNT') return vals.length;
+      if (!vals.length) return null;
+      if (i.fn === 'SUM') return vals.reduce((a, b) => a + b, 0);
+      if (i.fn === 'AVG') return vals.reduce((a, b) => a + b, 0) / vals.length;
+      return vals.reduce((a, b) => (i.fn === 'MIN' ? (cmp(b, a) < 0 ? b : a) : (cmp(b, a) > 0 ? b : a)));
+    }));
+    if (order) {
+      const ix = cols.findIndex(c => c.toLowerCase() === order.toLowerCase());
+      if (ix < 0) throw new Error('ORDER BY doit utiliser une colonne sélectionnée');
+      out.sort((a, b) => (desc ? -1 : 1) * cmp(a[ix], b[ix]));
+    }
+  } else {
+    if (order) { getv(table.rows[0] || {}, order); rows = [...rows].sort((a, b) => (desc ? -1 : 1) * cmp(getv(a, order), getv(b, order))); }
+    out = rows.map(r => items.flatMap(i => i.star ? table.cols.map(c => getv(r, c)) : [getv(r, i.col)]));
+  }
+  if (distinct) { const seen = new Set(); out = out.filter(r => { const k = JSON.stringify(r); if (seen.has(k)) return false; seen.add(k); return true; }); }
+  if (limit != null) out = out.slice(0, limit);
+  return { cols, rows: out };
+}
+const sqlNorm = v => typeof v === 'number' ? Math.round(v * 100) / 100 : v;
+function sqlSame(a, b, ordered) {
+  const k = r => r.rows.map(x => JSON.stringify(x.map(sqlNorm)));
+  const ka = k(a), kb = k(b);
+  if (!ordered) { ka.sort(); kb.sort(); }
+  return a.cols.length === b.cols.length && JSON.stringify(ka) === JSON.stringify(kb);
+}
+const getSql = () => { try { return JSON.parse(localStorage.getItem('bac-sql') || '[]'); } catch (e) { return []; } };
+
+function toolSql() {
+  const t = TOOLS.find(x => x.id === 'sql');
+  let m = 0;
+  const draw = () => {
+    const ok = getSql(), mi = SQL_MISSIONS[m], tb = SQL_TABLES.eleves;
+    app.innerHTML = shell(t, `
+      <p class="qn">Mission ${m + 1} sur ${SQL_MISSIONS.length} · ${ok.length} validée${ok.length > 1 ? 's' : ''}</p>
+      <div class="chips">${SQL_MISSIONS.map((_, k) => `<button class="chip ${k === m ? 'on' : ''} ${ok.includes(k) ? 'done' : ''}" data-k="${k}" aria-label="Mission ${k + 1}">${k + 1}</button>`).join('')}</div>
+      <h2 class="mission">${esc(mi.t)}</h2>
+      <details class="schema"><summary>Table eleves (${tb.rows.length} lignes)</summary>${tableHtml(tb.cols, tb.rows.map(r => tb.cols.map(c => r[c])))}</details>
+      <textarea id="sqlIn" class="sqlbox" rows="4" spellcheck="false" aria-label="Votre requête SQL" placeholder="SELECT ... FROM eleves ..."></textarea>
+      <div class="actions"><button class="btn primary" id="sqlGo">Exécuter</button><button class="btn" id="sqlHint">Indice</button>${m < SQL_MISSIONS.length - 1 ? '<button class="btn" id="sqlNext">Mission suivante</button>' : ''}</div>
+      <div id="sqlOut" aria-live="polite"></div>`);
+    app.querySelectorAll('.chip').forEach(b => b.onclick = () => { m = +b.dataset.k; draw(); });
+    q('sqlHint').onclick = () => { q('sqlOut').innerHTML = `<div class="result"><p>${esc(mi.h)}</p></div>`; };
+    const nx = q('sqlNext'); if (nx) nx.onclick = () => { m++; draw(); };
+    q('sqlGo').onclick = () => {
+      const out = q('sqlOut');
+      try {
+        const res = sqlRun(q('sqlIn').value, SQL_TABLES), exp = sqlRun(mi.s, SQL_TABLES);
+        const good = sqlSame(res, exp, mi.ordered);
+        if (good) { const d = getSql(); if (!d.includes(m)) { d.push(m); try { localStorage.setItem('bac-sql', JSON.stringify(d)); } catch (e) {} } }
+        out.innerHTML = `<p class="fb ${good ? 'ok' : 'ko'}"><strong>${good ? 'Mission réussie.' : 'Le résultat ne correspond pas encore.'}</strong> ${good ? '' : 'Relisez la consigne et vérifiez le filtre, le tri ou les colonnes.'}</p>${tableHtml(res.cols, res.rows)}`;
+        if (good) out.innerHTML += `<p class="hint">Solution possible : <code>${esc(mi.s)}</code></p>`;
+      } catch (e) { out.innerHTML = `<p class="fb ko"><strong>Erreur SQL.</strong> ${esc(e.message)}</p>`; }
+    };
+  };
+  draw();
+}
+function tableHtml(cols, rows) {
+  return `<div class="tbl"><table><thead><tr>${cols.map(c => `<th>${esc(c)}</th>`).join('')}</tr></thead><tbody>${rows.map(r => `<tr>${r.map(v => `<td>${esc(typeof v === 'number' ? sqlNorm(v) : v === null ? 'NULL' : v)}</td>`).join('')}</tr>`).join('')}</tbody></table>${rows.length ? '' : '<p class="hint">Aucune ligne.</p>'}</div>`;
+}
+
+/* ---------- Devoirs ---------- */
+const getTasks = () => { try { return JSON.parse(localStorage.getItem('bac-devoirs') || '[]'); } catch (e) { return []; } };
+const setTasks = t => { try { localStorage.setItem('bac-devoirs', JSON.stringify(t)); } catch (e) {} };
+function toolDevoirs() {
+  const t = TOOLS.find(x => x.id === 'devoirs');
+  const today = dayKey(new Date());
+  const draw = () => {
+    const tasks = getTasks().map((x, idx) => ({ ...x, idx })).sort((a, b) => (a.done - b.done) || String(a.date).localeCompare(String(b.date)));
+    app.innerHTML = shell(t, `
+      <div class="form">
+        <label>Devoir<input id="dT" type="text" maxlength="80" placeholder="Série 3 de maths"></label>
+        <label>Matière<select id="dM">${ALL_SUBJECTS.map(n => `<option>${esc(n)}</option>`).join('')}</select></label>
+        <label>Date limite<input id="dD" type="date" value="${today}"></label>
+      </div>
+      <button class="btn primary" id="dAdd">Ajouter</button>
+      <ul class="tasks">${tasks.length ? tasks.map(x => `<li class="${x.done ? 'fin' : ''} ${!x.done && x.date && x.date < today ? 'late' : ''}">
+        <button class="tick" data-a="toggle" data-i="${x.idx}" aria-pressed="${!!x.done}" aria-label="Terminé">✓</button>
+        <span><strong>${esc(x.titre)}</strong><small>${esc(x.matiere)}${x.date ? ' · pour le ' + esc(new Date(x.date + 'T12:00').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' })) : ''}${!x.done && x.date && x.date < today ? ' · en retard' : ''}</small></span>
+        <button class="btn" data-a="del" data-i="${x.idx}" aria-label="Supprimer">Supprimer</button></li>`).join('') : '<li class="hint">Aucun devoir pour le moment.</li>'}</ul>`);
+    q('dAdd').onclick = () => {
+      const titre = q('dT').value.trim(); if (!titre) { q('dT').focus(); return; }
+      const l = getTasks(); l.push({ titre, matiere: q('dM').value, date: q('dD').value, done: false }); setTasks(l); draw();
+    };
+    app.onclick = e => {
+      const b = e.target.closest && e.target.closest('[data-a]'); if (!b) return;
+      const l = getTasks(), i = +b.dataset.i;
+      if (b.dataset.a === 'toggle') l[i].done = !l[i].done; else l.splice(i, 1);
+      setTasks(l); draw();
+    };
+  };
+  draw();
+}
+
+/* ---------- Progression ---------- */
+function toolProgression() {
+  const t = TOOLS.find(x => x.id === 'progression');
+  const best = getQcmBest(), f = getFocus(), sql = getSql();
+  let week = 0;
+  for (let i = 0; i < 7; i++) { const d = new Date(); d.setDate(d.getDate() - i); Object.values(f[dayKey(d)] || {}).forEach(v => week += v); }
+  const cards = SECTIONS.map(s => {
+    const tot = s.matieres.reduce((n, m) => n + m.lecons.length, 0), d = s.matieres.reduce((n, m) => n + doneCount(s, m), 0);
+    return `<section class="prog" style="--c:${s.couleur}"><h3><a href="#/s/${s.id}">${esc(s.nom)}</a> <small>${d} / ${tot} leçons</small></h3>
+      <div class="bar"><i style="width:${tot ? Math.round(d / tot * 100) : 0}%"></i></div></section>`;
+  }).join('');
+  const qkeys = Object.keys(best);
+  app.innerHTML = shell(t, `
+    <div class="cd"><div><small>Temps révisé (7 jours)</small><b>${hm(week)}</b></div>
+    <div><small>Missions SQL validées</small><b>${sql.length} / ${SQL_MISSIONS.length}</b></div>
+    <div><small>QCM faits</small><b>${qkeys.length}</b></div></div>
+    <h2 class="sub">Leçons terminées par section</h2>${cards}
+    <h2 class="sub">Meilleurs scores de QCM</h2>
+    ${qkeys.length ? qkeys.map(k => `<div class="stat"><span>${esc(subjName(k))}</span><div class="bar"><i style="width:${best[k]}%"></i></div><span>${best[k]} %</span></div>`).join('') : '<p class="hint">Aucun QCM terminé pour le moment. <a href="#/outils/qcm">Commencer</a>.</p>'}`);
+}
+
+/* ---------- Routage ---------- */
+function route() {
+  const p = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
+  window.scrollTo(0, 0);
+  stopTicks(); app.oninput = null; app.onclick = null;
+  if (p[0] === 'qcm') return qcmView(p[1]);
+  if (p[0] === 'fiches') return fichesView(p[1]);
+  if (p[0] === 'chaines') return chainesView();
+  if (p[0] === 'outils') {
+    const fn = { moyenne: toolMoyenne, 'bac-blanc': toolBacBlanc, seance: toolSeance, planning: toolPlanning, respiration: toolRespiration, qcm: toolEntrainement, sql: toolSql, devoirs: toolDevoirs, progression: toolProgression }[p[1]];
+    return fn ? fn() : toolsHome();
+  }
+  if (p[0] === 'search') return searchView(decodeURIComponent(p[1] || ''));
+  if (p[0] === 's') {
+    const s = SECTIONS.find(x => x.id === p[1]);
+    if (!s) return home();
+    if (!p[2]) return sectionView(s);
+    const m = s.matieres.find(x => x.id === p[2]);
+    if (!m) return sectionView(s);
+    currentTab = null; currentVid = 0;
+    return subjectView(s, m, Math.min(Math.max(parseInt(p[3] || '0', 10) || 0, 0), Math.max(m.lecons.length - 1, 0)), null);
+  }
+  home();
+}
+window.addEventListener('hashchange', route);
+
+/* ---------- Recherche, thème ---------- */
+document.getElementById('q').addEventListener('input', e => {
+  const v = e.target.value.trim();
+  location.hash = v ? `#/search/${encodeURIComponent(v)}` : '#/';
+});
+const root = document.documentElement;
+const THEMES = [
+  { id: 'default', ico: '🎨', nom: 'Default', dots: ['#1E4DA1', '#FFFFFF', '#2E7D5B'], swatch: 'linear-gradient(135deg,#1E4DA1,#FFFFFF 55%,#8FB0EE)' },
+  { id: 'hacker', ico: '💻', nom: 'Hacker', dark: true, dots: ['#00E83C', '#14B85A', '#00C853'], swatch: 'linear-gradient(135deg,#00C853,#00E83C)' },
+  { id: 'midnight', ico: '🌌', nom: 'Midnight', dark: true, dots: ['#6D8CFF', '#8A5CF0', '#2FD27E'], swatch: 'linear-gradient(135deg,#6D8CFF,#8A5CF0)' },
+  { id: 'aurora', ico: '✨', nom: 'Aurora', dark: true, dots: ['#C084FC', '#2DD4BF', '#34D399'], swatch: 'linear-gradient(135deg,#A78BFA,#2DD4BF)' },
+  { id: 'ocean', ico: '🌊', nom: 'Ocean', dark: true, dots: ['#22B8CF', '#3B82F6', '#51CF66'], swatch: 'linear-gradient(135deg,#0E7490,#22B8CF)' },
+  { id: 'sunset', ico: '🌅', nom: 'Sunset', dark: false, dots: ['#C2410C', '#F59E0B', '#2F9E44'], swatch: 'linear-gradient(135deg,#F97316,#FCD34D)' },
+  { id: 'rose', ico: '🌸', nom: 'Rose', dark: false, dots: ['#C2255C', '#F783AC', '#2F9E44'], swatch: 'linear-gradient(135deg,#F06595,#FFD6E5)' },
+  { id: 'tunisie', ico: '🇹🇳', nom: 'Tunisie', dark: false, dots: ['#E70013', '#FFFFFF', '#2B8A3E'], swatch: 'linear-gradient(135deg,#E70013,#FFFFFF)' }
+];
+let skin = 'default', mode = '';
+try { skin = localStorage.getItem('bac-skin') || 'default'; mode = localStorage.getItem('bac-mode') || ''; } catch (e) {}
+if (!THEMES.some(t => t.id === skin)) skin = 'default';
+const curTheme = () => THEMES.find(t => t.id === skin);
+const isDark = () => { const t = curTheme(); return t.dark !== undefined ? t.dark : (mode ? mode === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches); };
+function applyTheme() {
+  const t = curTheme(), dark = isDark();
+  if (skin === 'default') delete root.dataset.theme; else root.dataset.theme = skin;
+  if (skin === 'default' && mode) root.dataset.mode = mode; else delete root.dataset.mode;
+  q('themeDot').style.background = skin === 'default' && dark ? '#7FA6EE' : t.dots[0];
+  q('themeEmoji').textContent = t.ico;
+  q('theme').textContent = dark ? '☀' : '☾';
+  q('theme').setAttribute('aria-label', dark ? 'Passer en mode clair' : 'Passer en mode sombre');
+  q('themePanel').querySelectorAll('.topt').forEach(b => b.setAttribute('aria-checked', String(b.dataset.id === skin)));
+  try { localStorage.setItem('bac-skin', skin); localStorage.setItem('bac-mode', mode); } catch (e) {}
+}
+q('themePanel').innerHTML = `<h2>Choisir un thème</h2><div role="radiogroup" aria-label="Thèmes">${THEMES.map(t => `
+  <button class="topt" role="radio" data-id="${t.id}" aria-checked="false"><span class="sw" style="background:${t.swatch}"></span>
+    <span><span class="tn">${t.ico} ${esc(t.nom)}</span><span class="tm"><span>${t.dark === false ? '☀ Clair' : t.dark === true ? '☾ Sombre' : '☀ ☾ Clair et sombre'}</span>${t.dots.map(c => `<i style="background:${c}"></i>`).join('')}</span></span>
+    <span class="ck" aria-hidden="true">✓</span></button>`).join('')}</div>`;
+const closePanel = () => { q('themePanel').hidden = true; q('themeBtn').setAttribute('aria-expanded', 'false'); };
+q('themeBtn').onclick = e => { e.stopPropagation(); const open = q('themePanel').hidden; q('themePanel').hidden = !open; q('themeBtn').setAttribute('aria-expanded', String(open)); };
+q('themePanel').onclick = e => { const b = e.target.closest && e.target.closest('.topt'); if (!b) return; skin = b.dataset.id; applyTheme(); };
+q('theme').onclick = () => { const dark = isDark(); skin = 'default'; mode = dark ? 'light' : 'dark'; applyTheme(); };
+document.addEventListener('click', e => { if (!q('themePanel').hidden && !(e.target.closest && e.target.closest('.themebox'))) closePanel(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !q('themePanel').hidden) { closePanel(); q('themeBtn').focus(); } });
+applyTheme();
+document.getElementById('brandName').textContent = SITE.nom;
+document.getElementById('year').textContent = new Date().getFullYear();
+route();
+</script>
 </body>
 </html>
